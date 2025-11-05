@@ -1,6 +1,14 @@
+:root {
+    --clr-white: #ffffff;
+    --clr-grey: #474747;
+    --clr-black: #04151f;
+    --clr-primary: #d5b781;
+    --clr-white-50: rgba(255, 255, 255, 0.5);
+    --clr-black-50: rgba(0, 0, 0, 0.5);
+  }
+
 body {
   font-family: Instrument Sans;
-  font-weight: 100;
   margin: 0;
   padding: 0;
 }
@@ -8,96 +16,162 @@ body {
 a {
   cursor: pointer;
   text-decoration: none;
+  color: var(--clr-white);
 }
 
 a:hover {
-  color: #d5b781;
+  color: var(--clr-primary);
   transition: color 0.5s ease;
 }
 
-.aot {
-  background-image: url("assets/images/background_image_header.jpg");
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.7);
-  background-blend-mode: multiply;
-  height: 100vh;
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("assets/images/background_image_header.jpg") center/cover
+    no-repeat;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding-inline: 50px;
+  color: var(--clr-white);
 }
 
-header {
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.hero-header {
+  grid-row: 1;
+  align-self: start;
+  justify-self: stretch;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0;
-  margin: 0 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid var(--clr-white-50);
+  background: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 header img {
   width: 120px;
 }
 
-.phone-button {
-  font-family: Instrument Sans;
-  background-color: transparent;
+.btn-outline-small {
   border-radius: 45px;
-  border: 2px solid #555555;
-  color: white;
+  border: 2px solid var(--clr-white-50);
   padding: 8px 16px;
-  text-align: center;
-  cursor: pointer;
   transition-duration: 0.4s;
 }
 
-.phone-button:hover {
-  background-color: #555555;
+.btn-outline-small:hover {
+  background-color: var(--clr-grey);
   color: white;
+  transition-duration: 0.4s;
 }
 
 nav a {
   padding: 8px;
   margin: 0px 8px;
-  color: white;
-  font-size: 16px;
   transition: all 0.5s ease;
 }
 
-.aot-content {
-  top: 130px;
-  color: white;
+.hero-content {
+  grid-row: 2;
+  place-self: center;
   text-align: center;
-  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  font-size: 20px;
+  gap: 1.2rem;
+  max-width: 70ch;
+  margin-inline: auto;
+  padding: 9.5rem 0 6rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content span {
+  display: block;
+  max-width: 85%;
+  margin: 0 auto;
+  color: var(--clr-white-50);
+  line-height: 1.5;
 }
 
 .aot-content hr {
   width: 100px;
-  border: 1px solid white;
+  border: 1px solid var(--clr-white);
 }
 
 .aot-text {
   width: 40vw;
-  color: rgba(255, 255, 255, 0.4);
+  color: #95908C;
 }
 
 button {
-font-family: 'Montserrat', sans-serif;
-font-size: 17px;
-font-weight: bold;
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  color: white;
+  width: auto;
+  align-self: center;
   padding: 20px 40px;
-  margin-top: 50px;
+  margin: 50px 0 20px 0;
+  background-color: transparent;
+  border: 1px solid var(--clr-white);
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  color: var(--clr-white);
   transition-duration: 0.4s;
 }
 
 button:hover {
-    background-color: #555555;
-    color: white;
+  background-color: var(--clr-grey);
+}
+
+hr {
+  width: 75px;
+}
+
+
+
+  
+  /* --- Container --- */
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--clr-white);
+    font-family: 'Instrument Sans', sans-serif;
+  }
+  
+  /* --- Sterne --- */
+  .rating__stars {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 10px;
+  }
+  
+  /* Hintergrundsterne (grau / transparent) */
+  .rating__stars-bg {
+    color: rgba(255,255,255,0.25);
+  }
+  
+  /* Vordergrundsterne (gefüllt, beige-golden) */
+  .rating__stars-fill {
+    color: var(--clr-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    width: calc((var(--rating, 0) / 5) * 100%);
+  }
+  
+  .rating-text {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 10px;
   }

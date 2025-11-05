@@ -8,8 +8,8 @@
     <title>Pensionhaus Firnsbachtal</title>
   </head>
   <body>
-    <div class="aot">
-      <header>
+    <div class="hero">
+      <header class="hero-header">
         <img src="./assets/images/logo.png" alt="logo_image" />
         <nav>
           <a class="navLink" href="#">Pension</a>
@@ -18,20 +18,39 @@
           <a class="navLink" href="#">Rezensionen</a>
           <a class="navLink" href="#">Standort</a>
         </nav>
-        <a class="phone-button" href="tel:+4956012154">Jetzt anrufen</a>
+        <a class="btn-outline-small" href="tel:+4956012154">Jetzt anrufen</a>
       </header>
 
-      <div class="aot-content">
+      <div class="hero-content">
         <h4>Pensionhaus Firnsbachtal</h4>
-        <h1>IHR PENSIONSHAUS<br />IM GRÜNEN</h1>
+        <h1>IHR PENSIONSHAUS IN DER NATUR IM GRÜNEN</h1>
         <hr />
-        <span class="aot-text"
+        <span
           >This template suits businesses offering varied options within a
           product category, such as hotels, activity centers, or rental services
         </span>
 
         <button>Call to action button</button>
+
+        <div class="rating" style="--rating: 0">
+          <div class="rating__stars">
+            <div class="rating__stars-bg">★★★★★</div>
+            <div class="rating__stars-fill">★★★★★</div>
+          </div>
+          <p class="rating-text">
+            <strong id="ratingScore">–</strong> / 5 basierend auf
+            <strong id="ratingCount">–</strong> Bewertungen
+          </p>
+        </div>
       </div>
     </div>
+
+    <!-- GOOGLE API -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOJ08SyrA0o6InmR84i9CceZE0FR3OkZ4&libraries=places&loading=async"
+    ></script>
+
+    <script src="/script.js"></script>
   </body>
 </html>

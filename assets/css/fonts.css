@@ -1,31 +1,31 @@
 @font-face {
     font-family: 'Instrument Sans';
-    src: url('/assets/fonts/instrument_sans/InstrumentSans-Italic.woff2') format('woff2');
-    font-weight: normal;
+    src: url('/assets/fonts/instrument_sans/InstrumentSans-Italic-VariableFont_wdth\,wght.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Instrument Sans';
-    src: url('/assets/fonts/instrument_sans/InstrumentSans-Regular.woff2') format('woff2');
-    font-weight: normal;
+    src: url('/assets/fonts/instrument_sans/InstrumentSans-VariableFont_wdth\,wght.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('/assets/fonts/montserrat/Montserrat-Thin.woff2') format('woff2');
-    font-weight: 100;
+    src: url('/assets/fonts/montserrat/Montserrat-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('/assets/fonts/montserrat/Montserrat-ThinItalic.woff2') format('woff2');
-    font-weight: 100;
+    src: url('/assets/fonts/montserrat/Montserrat-Italic-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: italic;
     font-display: swap;
 }
@@ -34,11 +34,16 @@
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 64px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0;
 }
 
 h4 {
-    font-size: 24px;
-    margin: 0;
+    font-size: 23px;
+    font-weight: 100;
+    margin: 0 0 15px 0;
+}
+
+span {
+    font-size: 20px;
 }
