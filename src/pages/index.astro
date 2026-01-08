@@ -1,7 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
-import { MapPin, Star, TreePine, Coffee, Footprints } from "lucide-astro";
+import {
+  MapPin,
+  Star,
+  TreePine,
+  Coffee,
+  Footprints,
+  ArrowRight,
+} from "lucide-astro";
 import { path } from "../utils/path";
 import { Image } from "astro:assets";
 import forest from "../assets/forest.webp";
@@ -169,9 +176,17 @@ import home from "../assets/home.jpg";
               size={16}
             /><Star fill="currentColor" size={16} />
           </div>
-          <span class="text-xs text-gray-400 ml-1 border-l pl-2 border-gray-200"
-            >Google Rezensionen</span
+          <div
+            class="flex items-center gap-1 text-xs text-gray-500 ml-1 border-l pl-3 border-gray-300"
           >
+            <a href={site.rating} target="_blank" class="flex gap-1">
+              <span>Google Rezensionen</span>
+              <ArrowRight
+                size={14}
+                class="text-primary group-hover:translate-x-1 transition-transform"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -191,11 +206,15 @@ import home from "../assets/home.jpg";
             /><Star fill="currentColor" size={16} />
           </div>
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
-            "Ein wunderbarer Ort zum Abschalten. Die Zimmer sind blitzsauber und
-            die Lage am Waldrand ist traumhaft für Spaziergänge."
+            "Eine schöne, kleine Pension, die sich hervorragend eignet
+            Urlaubsgäste unterzubringen oder auch selbst ein paar Tage zu
+            verbringen. Sehr freundlich. Kinder sind gern gesehen. Gut gelegen,
+            man sollte ein Auto haben. Es können von dort aus tolle Ausflüge
+            gemacht werden. Das Gelände lädt auch zum Spielen und Verweilen
+            ein."
           </p>
           <div class="pt-4 border-t border-gray-50">
-            <p class="font-bold text-gray-900 text-sm">Sabine M.</p>
+            <p class="font-bold text-gray-900 text-sm">Martine H.</p>
           </div>
         </div>
 
@@ -213,11 +232,12 @@ import home from "../assets/home.jpg";
             /><Star fill="currentColor" size={16} />
           </div>
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
-            "Perfekt für Monteure und Urlauber. Sehr netter Kontakt und das
-            Frühstück lässt keine Wünsche offen. Komme gerne wieder."
+            "Die Familie ist sehr nett und hilfsbereit, die Zimmer hell und
+            sauber. Der Gartenbereich ist toll angelegt und das Frühstück
+            einfach super! Hier fühlt man sich sofort wohl!"
           </p>
           <div class="pt-4 border-t border-gray-50">
-            <p class="font-bold text-gray-900 text-sm">Thomas K.</p>
+            <p class="font-bold text-gray-900 text-sm">Roland S.</p>
           </div>
         </div>
 
@@ -234,12 +254,16 @@ import home from "../assets/home.jpg";
               size={16}
             /><Star fill="currentColor" size={16} />
           </div>
+
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
-            "Die Nähe zu Kassel ist super, aber man schläft hier so ruhig wie
-            mitten in der Wildnis. Preis-Leistung ist top!"
+            "Einfach perfekt, großes, sehr sauberes Zimmer, sauberes Bad, sehr
+            nette Gastgeber und das Frühstück war einfach mega, alles vorhanden,
+            zusätzlich Obst und angemachter Quark und so reichlich, wir waren
+            lange satt. Wir haben schon bedauert, hier nur für eine Nacht
+            Zwischenstopp gemacht zu haben!"
           </p>
           <div class="pt-4 border-t border-gray-50">
-            <p class="font-bold text-gray-900 text-sm">Julia W.</p>
+            <p class="font-bold text-gray-900 text-sm">April W.</p>
           </div>
         </div>
       </div>

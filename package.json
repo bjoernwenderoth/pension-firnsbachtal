@@ -11,7 +11,6 @@
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/playfair-display": "^5.2.8",
-    "@lucide/astro": "^0.562.0",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.7",
     "lucide-astro": "^0.556.0",
