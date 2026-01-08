@@ -16,5 +16,8 @@
     "astro": "^5.16.7",
     "lucide-astro": "^0.556.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3"
   }
 }

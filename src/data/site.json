@@ -1,6 +1,8 @@
 {
   "name": "Haus Firnsbachtal",
   "tagline": "Ruhe. Natur. Ankommen.",
+  "firstname": "Jochen",
+  "lastname": "Keßler",
   "address": {
     "street": "Musterstraße 12",
     "zip": "34270",

@@ -1,0 +1,258 @@
+---
+import Layout from "../layouts/Layout.astro";
+import site from "../data/site.json";
+import { path } from "../utils/path";
+// Hier habe ich 'Bike' und 'Club' (für Golf) hinzugefügt
+import {
+  Mountain,
+  Castle,
+  Droplets,
+  Map,
+  Train,
+  Car,
+  Footprints,
+  Camera,
+  Bike,
+  Club,
+} from "lucide-astro";
+---
+
+<Layout title="Lage & Umgebung">
+  <!-- Hero Section -->
+  <div
+    class="relative h-[60vh] flex items-center justify-center overflow-hidden"
+  >
+    <img
+      src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2070&auto=format&fit=crop"
+      alt="Wald im Nebel Habichtswald"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">
+      <h1 class="text-4xl md:text-6xl font-serif font-bold mb-4 drop-shadow-md">
+        Im Tal der Ruhe
+      </h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto text-white/90 font-light">
+        Wo der Habichtswald am schönsten ist: Entdecken Sie das Firnsbachtal und
+        das UNESCO-Welterbe vor der Haustür.
+      </p>
+    </div>
+  </div>
+
+  <!-- Intro: Das Firnsbachtal -->
+  <section class="py-20 bg-bg-warm">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <span
+        class="uppercase tracking-widest text-primary text-sm font-bold mb-2 block"
+        >Direkt vor der Tür</span
+      >
+      <h2 class="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
+        Das magische Firnsbachtal
+      </h2>
+      <div class="prose prose-lg mx-auto text-gray-600">
+        <p>
+          Unsere Pension liegt eingebettet im idyllischen <strong
+            >Firnsbachtal</strong
+          >. Es ist mehr als nur ein Waldstück – es ist ein Ort zum Durchatmen.
+          Der plätschernde Bach sorgt an heißen Sommertagen für natürliche Kühle
+          und im Herbst verwandelt sich der Laubwald in ein goldenes Farbenmeer.
+        </p>
+        <p>
+          Direkt ab Haus können Sie loslaufen. Kein Auto, keine Anfahrt. Einfach
+          Schuhe anziehen und in die Natur eintauchen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Grid -->
+  <section class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-serif text-primary mb-12 text-center">
+      Erlebnisse in der Nähe
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Wandern -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Footprints size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">
+            Wanderparadies Habichtswald
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Der Premiumwanderweg <strong>Habichtswaldsteig</strong> verläuft in unmittelbarer
+            Nähe. Entdecken Sie die "Extratour H2" oder spazieren Sie gemütlich zum
+            "Herbsthäuschen" für Kaffee und Kuchen.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Eco Pfad Archäologie</li>
+            <li>• Premiumwanderwege direkt ab Haus</li>
+            <li>• Dörnberg mit den Helfensteinen</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kultur -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Castle size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">
+            UNESCO Welterbe Bergpark
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Nur ca. 10 Autominuten oder eine schöne Wanderung entfernt liegt der
+            Bergpark Wilhelmshöhe. Bestaunen Sie den monumentalen <strong
+              >Herkules</strong
+            >, das Schloss Wilhelmshöhe und die weltberühmten Wasserspiele.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Löwenburg</li>
+            <li>• Gewächshaus & Ballhaus</li>
+            <li>• Gemäldegalerie Alte Meister</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NEU: Action & Bike -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Bike size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">
+            Biken & Hohes Gras
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Für Action-Liebhaber ist das Zentrum <strong>Hohes Gras</strong> ein Muss.
+            Mountainbiker finden hier spannende Trails, während der Kletterwald Abenteuer
+            in den Baumwipfeln bietet.
+          </p>
+          <ul class="text-sm text-gray-500 space-y-1">
+            <li>• Kletterwald Hohes Gras</li>
+            <li>• Flowtrails & MTB-Strecken</li>
+            <li>• Skilift & Rodeln im Winter</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wellness -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Droplets size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">
+            Wellness & Entspannung
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Nach einem aktiven Tag lädt die <strong>Kurhessen Therme</strong> (ca.
+            10 Min. Fahrt) zum Entspannen ein. Eine riesige Saunalandschaft, Thermalsolebecken
+            und Wellness-Anwendungen warten auf Sie.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ausblicke -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Camera size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">
+            Panoramen & Fotospots
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Ob der Blick vom Bismarckturm über das Kasseler Becken oder der
+            Sonnenuntergang an den Helfensteinen – die Region bietet
+            spektakuläre Ausblicke für Naturliebhaber und Fotografen.
+          </p>
+        </div>
+      </div>
+
+      <!-- NEU: Golf -->
+      <div class="flex gap-6 items-start">
+        <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
+          <Club size={32} />
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-2 text-gray-800">Golf & Freizeit</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Nur wenige Minuten entfernt finden Sie den <strong
+              >Golf Club Kassel-Wilhelmshöhe</strong
+            >. Genießen Sie eine Partie Golf in herrlicher landschaftlicher
+            Kulisse direkt am Rand des Habichtswaldes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distances / Info Block -->
+  <section class="bg-primary text-white py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-serif mb-6">Perfekt angebunden</h2>
+          <p class="text-white/80 mb-8 leading-relaxed">
+            Trotz der absoluten Ruhe im Grünen sind Sie verkehrstechnisch
+            hervorragend angebunden. Die documenta-Stadt Kassel ist nur einen
+            Katzensprung entfernt.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 border-b border-white/20 pb-2">
+              <Car class="text-accent" />
+              <span class="flex-grow">Kassel Innenstadt</span>
+              <span class="font-bold text-accent">ca. 15 Min.</span>
+            </div>
+            <div class="flex items-center gap-4 border-b border-white/20 pb-2">
+              <Train class="text-accent" />
+              <span class="flex-grow">ICE Bahnhof Wilhelmshöhe</span>
+              <span class="font-bold text-accent">ca. 10 Min.</span>
+            </div>
+            <div class="flex items-center gap-4 border-b border-white/20 pb-2">
+              <Mountain class="text-accent" />
+              <span class="flex-grow">Hohes Gras / Kletterwald</span>
+              <span class="font-bold text-accent">ca. 5 Min.</span>
+            </div>
+            <div class="flex items-center gap-4 border-b border-white/20 pb-2">
+              <Map class="text-accent" />
+              <span class="flex-grow">Autobahn A44</span>
+              <span class="font-bold text-accent">ca. 5 Min.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="bg-white/10 p-2 rounded-xl backdrop-blur-sm">
+          <iframe
+            src={site.map_url}
+            width="100%"
+            height="350"
+            style="border:0; border-radius: 0.5rem;"
+            allowfullscreen=""
+            loading="lazy"
+            class="grayscale hover:grayscale-0 transition duration-500"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 text-center">
+    <h2 class="text-2xl font-serif text-gray-800 mb-6">
+      Bereit für Ihre Entdeckungstour?
+    </h2>
+    <a
+      href={path("zimmer")}
+      class="inline-block bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition shadow-lg"
+    >
+      Zimmer auswählen
+    </a>
+  </section>
+</Layout>

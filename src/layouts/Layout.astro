@@ -4,6 +4,7 @@ import { Phone, Mail, MessageCircle, Menu, X } from "lucide-astro";
 import "@fontsource/playfair-display";
 import "@fontsource/inter";
 import "../styles/global.css";
+import { path } from "../utils/path";
 
 const { title } = Astro.props;
 ---
@@ -53,7 +54,7 @@ const { title } = Astro.props;
       >
         <!-- Logo -->
         <a
-          href="/"
+          href={path("/")}
           class="text-2xl font-serif font-bold text-primary tracking-tight z-50"
         >
           {site.name}
@@ -63,19 +64,24 @@ const { title } = Astro.props;
         <ul
           class="hidden md:flex gap-8 text-sm font-medium text-gray-600 uppercase tracking-widest"
         >
-          <li><a href="/" class="hover:text-primary transition">Home</a></li>
+          <!-- Nutzung der path() Funktion -->
           <li>
-            <a href="/zimmer" class="hover:text-primary transition"
+            <a href={path("/")} class="hover:text-primary transition">Home</a>
+          </li>
+          <li>
+            <a href={path("zimmer")} class="hover:text-primary transition"
               >Zimmer & Preise</a
             >
           </li>
           <li>
-            <a href="/#lage" class="hover:text-primary transition"
+            <a href={path("/lage")} class="hover:text-primary transition"
               >Lage & Umgebung</a
             >
           </li>
           <li>
-            <a href="/kontakt" class="hover:text-primary transition">Kontakt</a>
+            <a href={path("kontakt")} class="hover:text-primary transition"
+              >Kontakt</a
+            >
           </li>
         </ul>
 
@@ -116,32 +122,33 @@ const { title } = Astro.props;
       </div>
 
       <!-- Links -->
-      <div class="flex-grow flex flex-col justify-center items-center gap-8">
+      <div class="grow flex flex-col justify-center items-center gap-8">
         <ul
           class="flex flex-col gap-6 text-2xl font-serif text-primary text-center"
         >
           <li>
-            <a href="/" class="mobile-link hover:text-primary-light transition"
-              >Home</a
+            <a
+              href={path("/")}
+              class="mobile-link hover:text-primary-light transition">Home</a
             >
           </li>
           <li>
             <a
-              href="/zimmer"
+              href={path("/zimmer")}
               class="mobile-link hover:text-primary-light transition"
               >Zimmer & Preise</a
             >
           </li>
           <li>
             <a
-              href="/#lage"
+              href={path("/lage")}
               class="mobile-link hover:text-primary-light transition"
               >Lage & Umgebung</a
             >
           </li>
           <li>
             <a
-              href="/kontakt"
+              href={path("/kontakt")}
               class="mobile-link hover:text-primary-light transition">Kontakt</a
             >
           </li>
@@ -190,10 +197,14 @@ const { title } = Astro.props;
           <h3 class="font-serif text-xl mb-4">Links</h3>
           <ul class="space-y-2 text-sm text-white/80">
             <li>
-              <a href="/impressum" class="hover:text-accent">Impressum</a>
+              <a href={path("/impressum")} class="hover:text-accent"
+                >Impressum</a
+              >
             </li>
             <li>
-              <a href="/datenschutz" class="hover:text-accent">Datenschutz</a>
+              <a href={path("/datenschutz")} class="hover:text-accent"
+                >Datenschutz</a
+              >
             </li>
           </ul>
         </div>

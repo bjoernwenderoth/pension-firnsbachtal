@@ -2,9 +2,14 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
+const isProduction = process.env.NODE_ENV === "production";
+const repoName = "/pension-firnsbachtal";
+
 export default defineConfig({
-  site: "https://bjoernwenderoth.github.io",
-  base: "/pension-firnsbachtal",
+  site: isProduction
+    ? "https://bjoernwenderoth.github.io"
+    : "http://localhost:4321",
+  base: isProduction ? repoName : "/",
   vite: {
     plugins: [tailwindcss()],
   },

@@ -1,147 +1,244 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import site from '../data/site.json';
-import { MapPin, ArrowRight, Star, TreePine, Coffee, Footprints } from 'lucide-astro';
+import Layout from "../layouts/Layout.astro";
+import site from "../data/site.json";
+import {
+  MapPin,
+  ArrowRight,
+  Star,
+  TreePine,
+  Coffee,
+  Footprints,
+} from "lucide-astro";
+import { path } from "../utils/path";
 ---
 
 <Layout title="Willkommen">
-	
-	<!-- HERO SECTION -->
-	<div class="relative h-[85vh] flex items-center justify-center overflow-hidden">
-		<!-- Platzhalterbild: Ersetze dies durch ein hochwertiges Foto deiner Unterkunft oder des Waldes -->
-		<img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070&auto=format&fit=crop" 
-             alt="Waldlandschaft Habichtswald" 
-             class="absolute inset-0 w-full h-full object-cover" />
-		
-		<div class="absolute inset-0 bg-black/30"></div>
-		
-		<div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">
-			<span class="uppercase tracking-[0.3em] text-sm md:text-base mb-4 block text-accent">Pension & Ferienwohnung</span>
-			<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
-				Ankommen im <br/> <span class="text-accent italic">Habichtswald</span>
-			</h1>
-			<p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-white/90">
-				Erleben Sie unberührte Natur direkt vor der Haustür. Ihr perfekter Ausgangspunkt für Wanderungen, Kultur in Kassel und pure Erholung.
-			</p>
-			<div class="flex flex-col md:flex-row gap-4 justify-center">
-				<a href="/zimmer" class="bg-bg-warm text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition duration-300">
-					Zimmer ansehen
-				</a>
-				<a href="/kontakt" class="bg-primary/80 backdrop-blur-sm text-white border border-white/30 font-bold py-3 px-8 rounded-full hover:bg-primary transition duration-300">
-					Jetzt anfragen
-				</a>
-			</div>
-		</div>
-	</div>
+  <!-- HERO SECTION -->
+  <div
+    class="relative h-[85vh] flex items-center justify-center overflow-hidden"
+  >
+    <!-- Platzhalterbild: Ersetze dies durch ein hochwertiges Foto deiner Unterkunft oder des Waldes -->
+    <img
+      src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070&auto=format&fit=crop"
+      alt="Waldlandschaft Habichtswald"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
 
-	<!-- INTRO SECTION -->
-	<section class="py-24 px-4 bg-white">
-		<div class="max-w-4xl mx-auto text-center">
-			<h2 class="text-3xl md:text-4xl text-primary mb-8">Ein Haus mit Herz in Schauenburg</h2>
-			<div class="prose prose-lg mx-auto text-gray-600 leading-relaxed">
-				<p>
-					Willkommen in Ihrer Auszeit. Unser liebevoll geführtes Haus liegt idyllisch eingebettet zwischen Elgershausen und Hoof, direkt in einem der malerischsten Täler des Habichtswaldes.
-				</p>
-				<p>
-					Bei uns beginnt die Erholung schon beim Blick aus dem Fenster. Die direkte Waldlage verspricht absolute Ruhe, während Sie gleichzeitig in nur wenigen Minuten mitten im Leben sind. Ob Sie den weltberühmten <strong>Bergpark Wilhelmshöhe</strong> mit dem Herkules erkunden, im <strong>Herbsthäuschen</strong> einkehren oder in der <strong>Kurhessentherme</strong> entspannen möchten – von hier aus liegen Ihnen die Schätze Nordhessens zu Füßen.
-				</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 not-prose">
-                    <div class="flex flex-col items-center gap-3">
-                        <div class="p-4 bg-nature-50 rounded-full text-primary"><TreePine size={32} /></div>
-                        <h3 class="font-serif text-lg">Direkte Waldlage</h3>
-                        <p class="text-sm">Wanderwege starten direkt vor der Haustür.</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-3">
-                        <div class="p-4 bg-nature-50 rounded-full text-primary"><Coffee size={32} /></div>
-                        <h3 class="font-serif text-lg">Gemütliches Ambiente</h3>
-                        <p class="text-sm">Fühlen Sie sich wie zu Hause.</p>
-                    </div>
-                    <div class="flex flex-col items-center gap-3">
-                        <div class="p-4 bg-nature-50 rounded-full text-primary"><MapPin size={32} /></div>
-                        <h3 class="font-serif text-lg">Zentral & Ruhig</h3>
-                        <p class="text-sm">10 Min. nach Kassel & zum ICE-Bahnhof.</p>
-                    </div>
-                </div>
-			</div>
-		</div>
-	</section>
+    <div class="absolute inset-0 bg-black/30"></div>
 
-    <!-- LOCATION HIGHLIGHT (Firnsbachtal) -->
-    <section id="lage" class="py-24 bg-bg-warm">
-        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <!-- Bild Platzhalter: Wald / Bach -->
-                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop" class="rounded-2xl shadow-xl w-full h-auto object-cover" alt="Firnsbachtal Natur" />
+    <div class="relative z-10 text-center text-white px-4 max-w-4xl fade-in-up">
+      <span
+        class="uppercase tracking-[0.3em] text-sm md:text-base mb-4 block text-accent"
+        >Pension & Ferienwohnung</span
+      >
+      <h1
+        class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg"
+      >
+        Ankommen im <br />
+        <span class="text-accent italic">Habichtswald</span>
+      </h1>
+      <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-white/90">
+        Erleben Sie unberührte Natur direkt vor der Haustür. Ihr perfekter
+        Ausgangspunkt für Wanderungen, Kultur in Kassel und pure Erholung.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a
+          href={path("/zimmer")}
+          class="bg-bg-warm text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition duration-300"
+        >
+          Zimmer ansehen
+        </a>
+        <a
+          href={path("/kontakt")}
+          class="bg-primary/80 backdrop-blur-sm text-white border border-white/30 font-bold py-3 px-8 rounded-full hover:bg-primary transition duration-300"
+        >
+          Jetzt anfragen
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO SECTION -->
+  <section class="py-24 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl text-primary mb-8">
+        Ein Haus mit Herz in Schauenburg
+      </h2>
+      <div class="prose prose-lg mx-auto text-gray-600 leading-relaxed">
+        <p>
+          Willkommen in Ihrer Auszeit. Unser liebevoll geführtes Haus liegt
+          idyllisch eingebettet zwischen Elgershausen und Hoof, direkt in einem
+          der malerischsten Täler des Habichtswaldes.
+        </p>
+        <p>
+          Bei uns beginnt die Erholung schon beim Blick aus dem Fenster. Die
+          direkte Waldlage verspricht absolute Ruhe, während Sie gleichzeitig in
+          nur wenigen Minuten mitten im Leben sind. Ob Sie den weltberühmten <strong
+            >Bergpark Wilhelmshöhe</strong
+          > mit dem Herkules erkunden, im <strong>Herbsthäuschen</strong> einkehren
+          oder in der <strong>Kurhessentherme</strong> entspannen möchten – von hier
+          aus liegen Ihnen die Schätze Nordhessens zu Füßen.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 not-prose">
+          <div class="flex flex-col items-center gap-3">
+            <div class="p-4 bg-nature-50 rounded-full text-primary">
+              <TreePine size={32} />
             </div>
-            <div class="order-1 md:order-2">
-                <span class="text-primary font-bold tracking-widest uppercase text-sm">Die Umgebung</span>
-                <h2 class="text-4xl text-primary mt-2 mb-6">Das magische Firnsbachtal</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    Unsere Pension liegt im Herzen des Firnsbachtals, einem echten Geheimtipp für Naturliebhaber. Das Rauschen des Firnsbachs und die dichten Buchenwälder schaffen ein Mikroklima, das Körper und Geist sofort entschleunigt.
-                </p>
-                <p class="text-gray-600 mb-8 leading-relaxed">
-                    Aktivurlauber finden hier ihr Paradies: Der Premiumwanderweg <strong>Habichtswaldsteig</strong> verläuft in unmittelbarer Nähe. Mountainbiker lieben die sanften Anstiege, und wer es ruhiger mag, genießt einen Spaziergang im Schatten alter Eichen.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-3 text-gray-700"><Footprints class="text-primary-light" /> Direkter Zugang zu Premium-Wanderwegen</li>
-                    <li class="flex items-center gap-3 text-gray-700"><MapPin class="text-primary-light" /> Nur 10 Minuten zur UNESCO Welterbe Bergpark</li>
-                </ul>
+            <h3 class="font-serif text-lg">Direkte Waldlage</h3>
+            <p class="text-sm">Wanderwege starten direkt vor der Haustür.</p>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <div class="p-4 bg-nature-50 rounded-full text-primary">
+              <Coffee size={32} />
             </div>
+            <h3 class="font-serif text-lg">Gemütliches Ambiente</h3>
+            <p class="text-sm">Fühlen Sie sich wie zu Hause.</p>
+          </div>
+          <div class="flex flex-col items-center gap-3">
+            <div class="p-4 bg-nature-50 rounded-full text-primary">
+              <MapPin size={32} />
+            </div>
+            <h3 class="font-serif text-lg">Zentral & Ruhig</h3>
+            <p class="text-sm">10 Min. nach Kassel & zum ICE-Bahnhof.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- REVIEWS (Mockup) -->
-    <section class="py-20 bg-white border-y border-gray-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex items-center justify-between mb-10">
-                <h2 class="text-3xl text-primary">Das sagen unsere Gäste</h2>
-                <div class="flex items-center gap-1 text-yellow-500">
-                    <Star fill="currentColor" size={20}/><Star fill="currentColor" size={20}/><Star fill="currentColor" size={20}/><Star fill="currentColor" size={20}/><Star fill="currentColor" size={20}/>
-                    <span class="text-gray-400 text-sm ml-2">(Google Rezensionen)</span>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Review 1 -->
-                <div class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"Ein wunderbarer Ort zum Abschalten. Die Zimmer sind blitzsauber und die Lage am Waldrand ist traumhaft für Spaziergänge."</p>
-                    <p class="font-bold text-primary text-sm">- Sabine M.</p>
-                </div>
-                <!-- Review 2 -->
-                <div class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"Perfekt für Monteure und Urlauber. Sehr netter Kontakt und das Frühstück lässt keine Wünsche offen. Komme gerne wieder."</p>
-                    <p class="font-bold text-primary text-sm">- Thomas K.</p>
-                </div>
-                <!-- Review 3 -->
-                <div class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/><Star fill="currentColor" size={16}/>
-                    </div>
-                    <p class="text-gray-600 italic mb-4">"Die Nähe zu Kassel ist super, aber man schläft hier so ruhig wie mitten in der Wildnis. Preis-Leistung ist top!"</p>
-                    <p class="font-bold text-primary text-sm">- Julia W.</p>
-                </div>
-            </div>
+  <!-- LOCATION HIGHLIGHT (Firnsbachtal) -->
+  <section id="lage" class="py-24 bg-bg-warm">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+        <!-- Bild Platzhalter: Wald / Bach -->
+        <img
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop"
+          class="rounded-2xl shadow-xl w-full h-auto object-cover"
+          alt="Firnsbachtal Natur"
+        />
+      </div>
+      <div class="order-1 md:order-2">
+        <span class="text-primary font-bold tracking-widest uppercase text-sm"
+          >Die Umgebung</span
+        >
+        <h2 class="text-4xl text-primary mt-2 mb-6">
+          Das magische Firnsbachtal
+        </h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Unsere Pension liegt im Herzen des Firnsbachtals, einem echten
+          Geheimtipp für Naturliebhaber. Das Rauschen des Firnsbachs und die
+          dichten Buchenwälder schaffen ein Mikroklima, das Körper und Geist
+          sofort entschleunigt.
+        </p>
+        <p class="text-gray-600 mb-8 leading-relaxed">
+          Aktivurlauber finden hier ihr Paradies: Der Premiumwanderweg <strong
+            >Habichtswaldsteig</strong
+          > verläuft in unmittelbarer Nähe. Mountainbiker lieben die sanften Anstiege,
+          und wer es ruhiger mag, genießt einen Spaziergang im Schatten alter Eichen.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 text-gray-700">
+            <Footprints class="text-primary-light" /> Direkter Zugang zu Premium-Wanderwegen
+          </li>
+          <li class="flex items-center gap-3 text-gray-700">
+            <MapPin class="text-primary-light" /> Nur 10 Minuten zur UNESCO Welterbe
+            Bergpark
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS (Mockup) -->
+  <section class="py-20 bg-white border-y border-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-3xl text-primary">Das sagen unsere Gäste</h2>
+        <div class="flex items-center gap-1 text-yellow-500">
+          <Star fill="currentColor" size={20} /><Star
+            fill="currentColor"
+            size={20}
+          /><Star fill="currentColor" size={20} /><Star
+            fill="currentColor"
+            size={20}
+          /><Star fill="currentColor" size={20} />
+          <span class="text-gray-400 text-sm ml-2">(Google Rezensionen)</span>
         </div>
-    </section>
+      </div>
 
-    <!-- MAP SECTION -->
-    <section class="h-[400px] w-full relative bg-gray-200">
-        <iframe 
-            src={site.map_url} 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            class="absolute inset-0 grayscale hover:grayscale-0 transition duration-700"
-        ></iframe>
-    </section>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div
+          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex gap-1 text-yellow-500 mb-4">
+            <Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} />
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "Ein wunderbarer Ort zum Abschalten. Die Zimmer sind blitzsauber und
+            die Lage am Waldrand ist traumhaft für Spaziergänge."
+          </p>
+          <p class="font-bold text-primary text-sm">- Sabine M.</p>
+        </div>
+        <!-- Review 2 -->
+        <div
+          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex gap-1 text-yellow-500 mb-4">
+            <Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} />
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "Perfekt für Monteure und Urlauber. Sehr netter Kontakt und das
+            Frühstück lässt keine Wünsche offen. Komme gerne wieder."
+          </p>
+          <p class="font-bold text-primary text-sm">- Thomas K.</p>
+        </div>
+        <!-- Review 3 -->
+        <div
+          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+        >
+          <div class="flex gap-1 text-yellow-500 mb-4">
+            <Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} />
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "Die Nähe zu Kassel ist super, aber man schläft hier so ruhig wie
+            mitten in der Wildnis. Preis-Leistung ist top!"
+          </p>
+          <p class="font-bold text-primary text-sm">- Julia W.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- MAP SECTION -->
+  <section class="h-[400px] w-full relative bg-gray-200">
+    <iframe
+      src={site.map_url}
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      class="absolute inset-0 grayscale hover:grayscale-0 transition duration-700"
+    ></iframe>
+  </section>
 </Layout>
