@@ -6,24 +6,32 @@ import "@fontsource/playfair-display";
 import "@fontsource/inter";
 import "../styles/global.css";
 
+import { getImage } from "astro:assets";
+import defaultOgImage from "../assets/og-image.jpg";
+
 interface Props {
   title: string;
   description?: string;
-  image?: string;
+  image?: ImageMetadata;
 }
 
 const {
   title,
   description = "Urlaub im Haus Firnsbachtal in Schauenburg. Gemütliche Pension & Ferienwohnung direkt am Waldrand. Wandern im Habichtswald, Nähe Kassel & Bergpark Wilhelmshöhe.",
-  image = path("/og-image.jpg"),
+  image = defaultOgImage,
 } = Astro.props;
 
-const siteUrl = import.meta.env.SITE ?? "https://bjoernwenderoth.github.io";
-const base = import.meta.env.BASE ?? "/";
+const optimizedImage = await getImage({
+  src: image,
+  format: "jpg",
+  width: 1200,
+  height: 630,
+  quality: 80,
+});
 
-const cleanBase = base.endsWith("/") ? base : `${base}/`;
-const cleanImage = image.startsWith("/") ? image.slice(1) : image;
-const imageUrl = `${siteUrl}${cleanBase}${cleanImage}`;
+const siteUrl = import.meta.env.SITE ?? "http://localhost:4321";
+const imageUrl = new URL(optimizedImage.src, siteUrl).href;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -46,6 +54,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={`${title} | ${site.name}`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -54,7 +64,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={imageUrl} />
   </head>
-
   <body class="flex flex-col min-h-screen bg-bg-warm text-gray-800">
     <!-- Top Bar (Desktop only) -->
     <div class="bg-primary text-white text-xs py-2 px-4 hidden md:block">
@@ -86,7 +95,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <nav
         class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
       >
-        <!-- Logo -->
         <a
           href={path("/")}
           class="text-2xl font-serif font-bold text-primary tracking-tight z-50"
@@ -94,7 +102,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           {site.name}
         </a>
 
-        <!-- Desktop Menu -->
         <ul
           class="hidden md:flex gap-8 text-sm font-medium text-gray-600 uppercase tracking-widest"
         >
@@ -118,7 +125,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </li>
         </ul>
 
-        <!-- Mobile Menu Button (Hamburger) -->
         <button
           id="menu-open-btn"
           class="md:hidden text-primary p-2 focus:outline-none"
@@ -129,7 +135,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </nav>
     </header>
 
-    <!-- MOBILE MENU OVERLAY -->
+    <!-- MOBILE MENU -->
     <div
       id="mobile-menu"
       class="fixed inset-0 z-50 bg-[#F9F7F2] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden h-dvh w-full flex flex-col"
@@ -240,7 +246,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     </footer>
 
-    <!-- Script Logic -->
     <script>
       const openBtn = document.getElementById("menu-open-btn");
       const closeBtn = document.getElementById("menu-close-btn");
