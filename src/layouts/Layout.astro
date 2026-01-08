@@ -1,0 +1,238 @@
+---
+import site from "../data/site.json";
+import { Phone, Mail, MessageCircle, Menu, X } from "lucide-astro";
+import "@fontsource/playfair-display";
+import "@fontsource/inter";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content={`Urlaub im ${site.name} in Schauenburg. Wandern im Habichtswald, Ruhe genießen.`}
+    />
+    <title>{title} | {site.name}</title>
+  </head>
+  <body class="flex flex-col min-h-screen bg-bg-warm text-gray-800">
+    <!-- Top Bar (Desktop only) -->
+    <div class="bg-primary text-white text-xs py-2 px-4 hidden md:block">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <div class="flex gap-6">
+          <a
+            href={`tel:${site.contact.phone}`}
+            class="flex items-center gap-2 hover:text-accent transition"
+            ><Phone size={14} /> {site.contact.phone_display}</a
+          >
+          <a
+            href={`mailto:${site.contact.email}`}
+            class="flex items-center gap-2 hover:text-accent transition"
+            ><Mail size={14} /> {site.contact.email}</a
+          >
+        </div>
+        <a
+          href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
+          class="flex items-center gap-2 hover:text-green-300 transition"
+          ><MessageCircle size={14} /> WhatsApp</a
+        >
+      </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header
+      class="bg-bg-warm/95 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 shadow-sm"
+    >
+      <nav
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a
+          href="/"
+          class="text-2xl font-serif font-bold text-primary tracking-tight z-50"
+        >
+          {site.name}
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul
+          class="hidden md:flex gap-8 text-sm font-medium text-gray-600 uppercase tracking-widest"
+        >
+          <li><a href="/" class="hover:text-primary transition">Home</a></li>
+          <li>
+            <a href="/zimmer" class="hover:text-primary transition"
+              >Zimmer & Preise</a
+            >
+          </li>
+          <li>
+            <a href="/#lage" class="hover:text-primary transition"
+              >Lage & Umgebung</a
+            >
+          </li>
+          <li>
+            <a href="/kontakt" class="hover:text-primary transition">Kontakt</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <button
+          id="menu-open-btn"
+          class="md:hidden text-primary p-2 focus:outline-none"
+          aria-label="Menü öffnen"
+        >
+          <Menu size={28} />
+        </button>
+      </nav>
+    </header>
+
+    <!-- 
+            MOBILE MENU OVERLAY 
+            Ausserhalb des Headers platziert, um Stacking-Probleme zu vermeiden.
+            Nutzt h-dvh für korrekte Höhe auf Handys.
+        -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-[#F9F7F2] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden h-dvh w-full flex flex-col"
+    >
+      <!-- Mobile Menu Header mit Close Button -->
+      <div
+        class="flex justify-between items-center p-4 border-b border-gray-200"
+      >
+        <span class="text-2xl font-serif font-bold text-primary"
+          >{site.name}</span
+        >
+        <button
+          id="menu-close-btn"
+          class="text-primary p-2 focus:outline-none"
+          aria-label="Menü schließen"
+        >
+          <X size={28} />
+        </button>
+      </div>
+
+      <!-- Links -->
+      <div class="flex-grow flex flex-col justify-center items-center gap-8">
+        <ul
+          class="flex flex-col gap-6 text-2xl font-serif text-primary text-center"
+        >
+          <li>
+            <a href="/" class="mobile-link hover:text-primary-light transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/zimmer"
+              class="mobile-link hover:text-primary-light transition"
+              >Zimmer & Preise</a
+            >
+          </li>
+          <li>
+            <a
+              href="/#lage"
+              class="mobile-link hover:text-primary-light transition"
+              >Lage & Umgebung</a
+            >
+          </li>
+          <li>
+            <a
+              href="/kontakt"
+              class="mobile-link hover:text-primary-light transition">Kontakt</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Footer Info -->
+      <div class="p-8 bg-primary/5 text-center">
+        <div class="flex justify-center gap-8 text-primary mb-4">
+          <a href={`tel:${site.contact.phone}`}><Phone size={24} /></a>
+          <a href={`mailto:${site.contact.email}`}><Mail size={24} /></a>
+          <a href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
+            ><MessageCircle size={24} /></a
+          >
+        </div>
+        <p class="text-xs text-gray-500">Mitten im Habichtswald</p>
+      </div>
+    </div>
+
+    <main class="flex-grow w-full">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 mt-auto">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-serif text-xl mb-4">{site.name}</h3>
+          <p class="text-white/80 text-sm leading-relaxed">
+            {site.tagline}
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl mb-4">Kontakt</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>{site.address.street}</li>
+            <li>{site.address.zip} {site.address.city}</li>
+            <li class="pt-2">
+              <a href={`tel:${site.contact.phone}`}
+                >{site.contact.phone_display}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl mb-4">Links</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li>
+              <a href="/impressum" class="hover:text-accent">Impressum</a>
+            </li>
+            <li>
+              <a href="/datenschutz" class="hover:text-accent">Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Javascript Logic -->
+    <script>
+      const openBtn = document.getElementById("menu-open-btn");
+      const closeBtn = document.getElementById("menu-close-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      function openMenu() {
+        // Das '?' bedeutet: Führe das nur aus, wenn mobileMenu NICHT null ist
+        mobileMenu?.classList.remove("translate-x-full");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        mobileMenu?.classList.add("translate-x-full");
+        document.body.style.overflow = "";
+      }
+
+      // Event Listener nur hinzufügen, wenn die Buttons auch wirklich gefunden wurden
+      if (openBtn) {
+        openBtn.addEventListener("click", openMenu);
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", closeMenu);
+      }
+
+      // Links schließen das Menü auch
+      if (mobileLinks) {
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      }
+    </script>
+  </body>
+</html>
