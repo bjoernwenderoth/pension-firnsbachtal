@@ -1,18 +1,18 @@
 {
-  "name": "Haus Firnsbachtal",
+  "name": "Pensionshaus Firnsbachtal",
   "tagline": "Ruhe. Natur. Ankommen.",
   "firstname": "Jochen",
   "lastname": "Keßler",
   "address": {
-    "street": "Musterstraße 12",
+    "street": "Firnsbachtal 2b",
     "zip": "34270",
-    "city": "Schauenburg / Elgershausen"
+    "city": "Schauenburg - Elgershausen"
   },
   "contact": {
-    "phone": "+49 5601 123456",
-    "phone_display": "05601 - 123 456",
-    "email": "willkommen@haus-firnsbachtal.de",
-    "whatsapp": "+4917012345678"
+    "phone": "+49 5601 2154",
+    "phone_display": "05601 / 2154",
+    "email": "firnsbachtal@t-online.de",
+    "whatsapp": "00491606513127"
   },
   "prices": {
     "single": "48,00",
