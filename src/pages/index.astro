@@ -13,6 +13,7 @@ import { path } from "../utils/path";
 import { Image } from "astro:assets";
 import forest from "../assets/forest.webp";
 import home from "../assets/home.jpg";
+import PrivacyMap from "../components/PrivacyMap.astro";
 ---
 
 <Layout
@@ -272,14 +273,6 @@ import home from "../assets/home.jpg";
 
   <!-- MAP SECTION -->
   <section class="h-100 w-full relative">
-    <iframe
-      src={site.map_url}
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      class="absolute"></iframe>
+    <PrivacyMap url={site.map_url} />
   </section>
 </Layout>
