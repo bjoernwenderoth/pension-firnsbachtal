@@ -5,86 +5,131 @@ import site from "../data/site.json";
 
 <Layout
   title="Datenschutz"
-  description="Datenschutzerklärung für die Nutzung unserer Webseite."
+  description="Datenschutzerklärung für die Nutzung der Webseite Haus Firnsbachtal."
 >
   <div class="max-w-3xl mx-auto px-4 py-20">
     <h1 class="text-4xl font-serif text-primary mb-10">Datenschutzerklärung</h1>
 
-    <div class="space-y-8 text-gray-700 leading-relaxed">
+    <div class="space-y-10 text-gray-700 leading-relaxed">
       <section>
-        <h2 class="text-xl font-bold mb-2">1. Datenschutz auf einen Blick</h2>
-        <h3 class="font-bold mt-4 mb-1">Allgemeine Hinweise</h3>
+        <h2 class="text-2xl font-serif text-primary mb-4">
+          1. Datenschutz auf einen Blick
+        </h2>
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">Allgemeine Hinweise</h3>
         <p>
           Die folgenden Hinweise geben einen einfachen Überblick darüber, was
           mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website
           besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie
           persönlich identifiziert werden können.
         </p>
-        <h3 class="font-bold mt-4 mb-1">Datenerfassung auf dieser Website</h3>
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">
+          Datenerfassung auf dieser Website
+        </h3>
         <p>
           <strong
             >Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong
           ><br />
           Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber.
-          Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+          Dessen Kontaktdaten können Sie dem Abschnitt "Hinweis zur verantwortlichen
+          Stelle" in dieser Datenschutzerklärung entnehmen.
         </p>
-        <p>
+        <p class="mt-2">
           <strong>Wie erfassen wir Ihre Daten?</strong><br />
-          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen
-          (z.B. per E-Mail oder Kontaktformular). Andere Daten werden automatisch
-          beim Besuch der Website durch unsere IT-Systeme erfasst (z.B. Internetbrowser,
-          Betriebssystem oder Uhrzeit des Seitenaufrufs).
+          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen.
+          Hierbei kann es sich z. B. um Daten handeln, die Sie uns per E-Mail oder
+          WhatsApp senden. Andere Daten werden automatisch oder nach Ihrer Einwilligung
+          beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem
+          technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des
+          Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie
+          diese Website betreten.
         </p>
       </section>
 
+      <!-- 2. Hosting -->
       <section>
-        <h2 class="text-xl font-bold mb-2">2. Hosting</h2>
+        <h2 class="text-2xl font-serif text-primary mb-4">2. Hosting</h2>
+        <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">GitHub Pages</h3>
         <p>
-          Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br />
-          <strong>GitHub Pages</strong><br />
-          Anbieter ist GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107,
-          USA. GitHub erfasst Protokolldaten (z. B. IP-Adresse), um die Sicherheit
-          und Funktionsfähigkeit des Dienstes zu gewährleisten. Details entnehmen
-          Sie der Datenschutzerklärung von GitHub: <a
+          Anbieter ist GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA
+          94107, USA. <br />
+          Wenn Sie unsere Website besuchen, erfasst GitHub Ihre IP-Adresse und speichert
+          diese in Logfiles, um die Sicherheit und Stabilität der Website zu gewährleisten.
+        </p>
+        <p class="mt-2">
+          Details entnehmen Sie der Datenschutzerklärung von GitHub: <a
             href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement"
             target="_blank"
             rel="noopener"
-            class="text-primary underline">GitHub Privacy Statement</a
+            class="text-primary underline hover:text-primary-light"
+            >GitHub Privacy Statement</a
           >.
         </p>
       </section>
 
+      <!-- 3. Allgemeine Hinweise -->
       <section>
-        <h2 class="text-xl font-bold mb-2">
+        <h2 class="text-2xl font-serif text-primary mb-4">
           3. Allgemeine Hinweise und Pflichtinformationen
         </h2>
-        <h3 class="font-bold mt-4 mb-1">Datenschutz</h3>
+
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">Datenschutz</h3>
         <p>
           Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten
           sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und
           entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser
           Datenschutzerklärung.
         </p>
-        <h3 class="font-bold mt-4 mb-1">Hinweis zur verantwortlichen Stelle</h3>
+
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">
+          Hinweis zur verantwortlichen Stelle
+        </h3>
         <p>
           Die verantwortliche Stelle für die Datenverarbeitung auf dieser
-          Website ist:<br /><br />
-          {site.name}<br />
+          Website ist:
+        </p>
+        <p class="mt-2 bg-gray-50 p-4 rounded-lg border border-gray-200">
+          <strong>{site.name}</strong><br />
           Inhaber: {site.firstname}
           {site.lastname}<br />
+          <!-- BITTE ANPASSEN -->
           {site.address.street}<br />
           {site.address.zip}
           {site.address.city}<br /><br />
           Telefon: {site.contact.phone_display}<br />
           E-Mail: {site.contact.email}
         </p>
+
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">
+          SSL- bzw. TLS-Verschlüsselung
+        </h3>
+        <p>
+          Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
+          Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.
+          Eine verschlüsselte Verbindung erkennen Sie daran, dass die
+          Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an
+          dem Schloss-Symbol in Ihrer Browserzeile.
+        </p>
       </section>
 
+      <!-- 4. Datenerfassung -->
       <section>
-        <h2 class="text-xl font-bold mb-2">
+        <h2 class="text-2xl font-serif text-primary mb-4">
           4. Datenerfassung auf dieser Website
         </h2>
-        <h3 class="font-bold mt-4 mb-1">
+
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">
+          Cookies & Local Storage
+        </h3>
+        <p>
+          Unsere Website verwendet keine klassischen Tracking-Cookies. Wir
+          nutzen jedoch den sogenannten "Local Storage" Ihres Browsers, um Ihre
+          Entscheidung bezüglich der Anzeige von Google Maps zu speichern. Diese
+          Information wird lokal auf Ihrem Gerät gespeichert und nicht an uns
+          übertragen.
+        </p>
+
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">
           Kontaktanfragen (E-Mail, Telefon, WhatsApp)
         </h3>
         <p>
@@ -94,25 +139,36 @@ import site from "../data/site.json";
           gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre
           Einwilligung weiter.
         </p>
+        <p class="mt-2">
+          Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1
+          lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags
+          zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen
+          erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf
+          unserem berechtigten Interesse an der effektiven Bearbeitung der an
+          uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).
+        </p>
       </section>
 
+      <!-- 5. Plugins und Tools -->
       <section>
-        <h2 class="text-xl font-bold mb-2">5. Plugins und Tools</h2>
+        <h2 class="text-2xl font-serif text-primary mb-4">
+          5. Plugins und Tools
+        </h2>
 
-        <h3 class="font-bold mt-4 mb-1">Google Maps</h3>
+        <h3 class="font-bold text-gray-900 mt-4 mb-2">Google Maps</h3>
         <p>
           Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die
           Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin
           4, Irland.
         </p>
-        <p>
-          Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre
-          IP-Adresse zu speichern. Diese Informationen werden in der Regel an
-          einen Server von Google in den USA übertragen und dort gespeichert.
-          Der Anbieter dieser Seite hat keinen Einfluss auf diese
-          Datenübertragung.
+        <p class="mt-2">
+          Um den Datenschutz zu gewährleisten, ist Google Maps standardmäßig
+          deaktiviert. Erst wenn Sie aktiv auf die Karte klicken
+          ("2-Klick-Lösung"), wird eine Verbindung zu den Servern von Google
+          hergestellt. Dabei wird Ihre IP-Adresse an Google übertragen und
+          Google setzt ggf. Cookies.
         </p>
-        <p>
+        <p class="mt-2">
           Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden
           Darstellung unserer Online-Angebote und an einer leichten
           Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies
@@ -120,16 +176,71 @@ import site from "../data/site.json";
           DSGVO dar.
         </p>
 
-        <h3 class="font-bold mt-4 mb-1">
+        <!-- WIDERRUFS FUNKTION -->
+        <div class="bg-primary/5 p-6 rounded-xl mt-6 border border-primary/10">
+          <h4 class="font-bold text-gray-800 mb-2 flex items-center gap-2">
+            Einstellungen für Karten
+          </h4>
+          <p class="text-sm text-gray-600 mb-4">
+            Haben Sie der dauerhaften Anzeige von Google Maps zugestimmt? Sie
+            können diese Entscheidung hier jederzeit widerrufen. Die Karten
+            werden dann erst wieder geladen, wenn Sie erneut darauf klicken.
+          </p>
+          <button
+            id="revoke-maps-btn"
+            class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-red-600 hover:border-red-300 transition shadow-sm"
+          >
+            Google Maps Einwilligung widerrufen
+          </button>
+          <p
+            id="revoke-success"
+            class="hidden text-green-700 text-sm mt-3 font-bold bg-green-50 p-2 rounded border border-green-200 inline-block"
+          >
+            ✓ Einstellung erfolgreich gelöscht. Die Seite wird neu geladen...
+          </p>
+        </div>
+
+        <h3 class="font-bold text-gray-900 mt-8 mb-2">
           Lokale Schriftarten (Google Fonts Local)
         </h3>
         <p>
           Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so
-          genannte Google Fonts, die jedoch lokal auf unserem Server installiert
-          sind. Beim Aufruf dieser Seite wird <strong>keine</strong> Verbindung zu
-          Servern von Google hergestellt.
+          genannte Google Fonts, die von Google bereitgestellt werden. Die
+          Google Fonts sind lokal installiert. Eine Verbindung zu Servern von
+          Google findet dabei nicht statt.
         </p>
       </section>
     </div>
   </div>
+
+  <!-- Script Logik für den Widerruf -->
+  <script>
+    const revokeBtn = document.getElementById("revoke-maps-btn");
+    const successMsg = document.getElementById("revoke-success");
+    // WICHTIG: Dieser Key muss exakt mit dem in PrivacyMap.astro übereinstimmen!
+    const STORAGE_KEY = "haus-firnsbachtal-maps-consent";
+
+    if (revokeBtn) {
+      // Prüfen, ob überhaupt eine Einwilligung vorliegt
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        revokeBtn.textContent = "Keine aktive Einwilligung gefunden";
+        (revokeBtn as HTMLButtonElement).disabled = true;
+        revokeBtn.classList.add("opacity-50", "cursor-not-allowed");
+      }
+
+      revokeBtn.addEventListener("click", () => {
+        // 1. Schlüssel löschen
+        localStorage.removeItem(STORAGE_KEY);
+
+        // 2. Feedback geben
+        if (successMsg) successMsg.classList.remove("hidden");
+        (revokeBtn as HTMLButtonElement).disabled = true;
+
+        // 3. Seite neu laden, damit die Änderung greift
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500);
+      });
+    }
+  </script>
 </Layout>
