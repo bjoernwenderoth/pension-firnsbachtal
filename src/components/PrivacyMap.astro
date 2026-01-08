@@ -1,5 +1,7 @@
 ---
 import { MapPin } from "lucide-astro";
+import { Image } from "astro:assets";
+import { path } from "../utils/path";
 
 interface Props {
   url: string;
@@ -10,7 +12,7 @@ interface Props {
 const {
   url,
   height = "h-[400px]",
-  previewImage = "/map-preview.jpg",
+  previewImage = path("/map-preview.jpg"),
 } = Astro.props;
 ---
 
