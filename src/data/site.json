@@ -12,7 +12,11 @@
     "phone": "+49 5601 2154",
     "phone_display": "05601 / 2154",
     "email": "firnsbachtal@t-online.de",
-    "whatsapp": "491606513127"
+    "whatsapp": "491606513127",
+    "email_template": {
+      "subject": "Buchungsanfrage Haus Firnsbachtal",
+      "body": "Guten Tag Familie Keßler,\n\nwir interessieren uns für einen Aufenthalt in Ihrem Haus.\n\nGewünschter Zeitraum:\nAnreise: \nAbreise: \n\nPersonenanzahl: \n\nMit freundlichen Grüßen"
+    }
   },
   "prices": {
     "single": "48,00",

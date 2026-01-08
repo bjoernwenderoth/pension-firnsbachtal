@@ -34,6 +34,8 @@ const siteUrl = import.meta.env.SITE ?? "http://localhost:4321";
 const imageUrl = new URL(optimizedImage.src, siteUrl).href;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(site.contact.email_template.subject)}&body=${encodeURIComponent(site.contact.email_template.body)}`;
 ---
 
 <!doctype html>
@@ -76,7 +78,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             ><Phone size={14} /> {site.contact.phone_display}</a
           >
           <a
-            href={`mailto:${site.contact.email}`}
+            href={mailtoLink}
             class="flex items-center gap-2 hover:text-accent transition"
             ><Mail size={14} /> {site.contact.email}</a
           >
@@ -164,25 +166,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <li>
             <a
               href={path("/")}
-              class="mobile-link hover:text-primary-light transition">Home</a>
+              class="mobile-link hover:text-primary-light transition">Home</a
+            >
           </li>
           <li>
             <a
               href={path("zimmer")}
               class="mobile-link hover:text-primary-light transition"
-              >Zimmer & Preise</a>
+              >Zimmer & Preise</a
+            >
           </li>
           <li>
             <a
               href={path("lage")}
               class="mobile-link hover:text-primary-light transition"
-              >Lage & Umgebung</a>
+              >Lage & Umgebung</a
+            >
           </li>
           <li>
             <a
               href={path("kontakt")}
-              class="mobile-link hover:text-primary-light transition"
-              >Kontakt</a>
+              class="mobile-link hover:text-primary-light transition">Kontakt</a
+            >
           </li>
         </ul>
       </div>
@@ -195,7 +200,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
             ><Phone size={24} /></a
           >
           <a
-            href={`mailto:${site.contact.email}`}
+            href={mailtoLink}
             class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
             ><Mail size={24} /></a
           >

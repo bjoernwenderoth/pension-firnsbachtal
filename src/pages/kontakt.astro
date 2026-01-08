@@ -13,6 +13,8 @@ import {
 } from "lucide-astro";
 import PrivacyMap from "../components/PrivacyMap.astro";
 import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
+
+const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(site.contact.email_template.subject)}&body=${encodeURIComponent(site.contact.email_template.body)}`;
 ---
 
 <Layout
@@ -103,7 +105,7 @@ import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
           uns.
         </p>
         <a
-          href={`mailto:${site.contact.email}`}
+          href={mailtoLink}
           class="mt-auto text-primary font-bold border-2 border-primary py-3 px-6 rounded-full hover:bg-primary hover:text-white transition flex items-center gap-2"
         >
           E-Mail schreiben
