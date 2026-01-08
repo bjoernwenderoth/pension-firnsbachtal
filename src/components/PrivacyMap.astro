@@ -18,13 +18,20 @@ const {
   class={`w-full relative bg-gray-200 group overflow-hidden privacy-map-wrapper ${height}`}
 >
   <div
-    class="privacy-map-placeholder absolute inset-0 bg-cover bg-center flex flex-col items-center justify-center bg-gray-300 transition-opacity duration-500 z-10"
-    style={`background-image: url('${previewImage}');`}
+    class="privacy-map-placeholder absolute inset-0 transition-opacity duration-500 z-10 overflow-hidden flex items-center justify-center"
   >
+    <div
+      class="absolute inset-0 bg-cover bg-center blur-[2px] scale-105 transition-transform duration-[2s]"
+      style={`background-image: url('${previewImage}');`}
+    >
+    </div>
+
+    <!-- Leichter dunkler Schleier -->
     <div class="absolute inset-0 bg-black/10"></div>
 
+    <!-- Inhalt -->
     <div
-      class="relative bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-xl text-center max-w-xs mx-4 border border-white/20"
+      class="relative z-10 bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-xl text-center max-w-xs mx-4 border border-white/20"
     >
       <div
         class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary"
@@ -44,6 +51,7 @@ const {
     </div>
   </div>
 
+  <!-- 2. Der Iframe -->
   <iframe
     data-src={url}
     width="100%"
@@ -82,7 +90,6 @@ const {
 
   const initMaps = () => {
     const allMaps = document.querySelectorAll(".privacy-map-wrapper");
-
     const hasConsent = localStorage.getItem(STORAGE_KEY) === "true";
 
     if (hasConsent) {
@@ -91,11 +98,9 @@ const {
 
     allMaps.forEach((map) => {
       const btn = map.querySelector(".privacy-map-btn");
-
       if (btn) {
         btn.addEventListener("click", () => {
           localStorage.setItem(STORAGE_KEY, "true");
-
           const mapsNow = document.querySelectorAll(".privacy-map-wrapper");
           mapsNow.forEach((m) => activateMap(m));
         });
