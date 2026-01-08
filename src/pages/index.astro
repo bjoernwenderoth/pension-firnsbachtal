@@ -62,7 +62,7 @@ import { path } from "../utils/path";
   </div>
 
   <!-- INTRO SECTION -->
-  <section class="py-24 px-4 bg-white">
+  <section class="py-24 px-4 bg-warm">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl text-primary mb-8">
         Ein Haus mit Herz in Schauenburg
@@ -110,7 +110,7 @@ import { path } from "../utils/path";
   </section>
 
   <!-- LOCATION HIGHLIGHT (Firnsbachtal) -->
-  <section id="lage" class="py-24 bg-bg-warm">
+  <section id="lage" class="py-24 bg-white">
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div class="order-2 md:order-1">
         <!-- Bild Platzhalter: Wald / Bach -->
@@ -152,29 +152,40 @@ import { path } from "../utils/path";
     </div>
   </section>
 
-  <!-- REVIEWS (Mockup) -->
-  <section class="py-20 bg-white border-y border-gray-100">
+  <!-- REVIEWS (Simple & Clean) -->
+  <section class="py-24 bg-[#F9F7F2]">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex items-center justify-between mb-10">
-        <h2 class="text-3xl text-primary">Das sagen unsere Gäste</h2>
-        <div class="flex items-center gap-1 text-yellow-500">
-          <Star fill="currentColor" size={20} /><Star
-            fill="currentColor"
-            size={20}
-          /><Star fill="currentColor" size={20} /><Star
-            fill="currentColor"
-            size={20}
-          /><Star fill="currentColor" size={20} />
-          <span class="text-gray-400 text-sm ml-2">(Google Rezensionen)</span>
+      <!-- Header: Zentriert & Klar -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4">
+          Das sagen unsere Gäste
+        </h2>
+        <div
+          class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100"
+        >
+          <span class="font-bold text-gray-800">4.9</span>
+          <div class="flex gap-1 text-yellow-400">
+            <Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} /><Star
+              fill="currentColor"
+              size={16}
+            /><Star fill="currentColor" size={16} />
+          </div>
+          <span class="text-xs text-gray-400 ml-1 border-l pl-2 border-gray-200"
+            >Google Rezensionen</span
+          >
         </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <!-- Grid: 3 Saubere Karten -->
+      <div class="grid md:grid-cols-3 gap-8">
         <!-- Review 1 -->
         <div
-          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+          class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
-          <div class="flex gap-1 text-yellow-500 mb-4">
+          <div class="flex gap-1 text-yellow-400 mb-4">
             <Star fill="currentColor" size={16} /><Star
               fill="currentColor"
               size={16}
@@ -183,17 +194,20 @@ import { path } from "../utils/path";
               size={16}
             /><Star fill="currentColor" size={16} />
           </div>
-          <p class="text-gray-600 italic mb-4">
+          <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
             "Ein wunderbarer Ort zum Abschalten. Die Zimmer sind blitzsauber und
             die Lage am Waldrand ist traumhaft für Spaziergänge."
           </p>
-          <p class="font-bold text-primary text-sm">- Sabine M.</p>
+          <div class="pt-4 border-t border-gray-50">
+            <p class="font-bold text-gray-900 text-sm">Sabine M.</p>
+          </div>
         </div>
+
         <!-- Review 2 -->
         <div
-          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+          class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
-          <div class="flex gap-1 text-yellow-500 mb-4">
+          <div class="flex gap-1 text-yellow-400 mb-4">
             <Star fill="currentColor" size={16} /><Star
               fill="currentColor"
               size={16}
@@ -202,17 +216,20 @@ import { path } from "../utils/path";
               size={16}
             /><Star fill="currentColor" size={16} />
           </div>
-          <p class="text-gray-600 italic mb-4">
+          <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
             "Perfekt für Monteure und Urlauber. Sehr netter Kontakt und das
             Frühstück lässt keine Wünsche offen. Komme gerne wieder."
           </p>
-          <p class="font-bold text-primary text-sm">- Thomas K.</p>
+          <div class="pt-4 border-t border-gray-50">
+            <p class="font-bold text-gray-900 text-sm">Thomas K.</p>
+          </div>
         </div>
+
         <!-- Review 3 -->
         <div
-          class="bg-bg-warm p-8 rounded-xl shadow-sm hover:shadow-md transition"
+          class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
-          <div class="flex gap-1 text-yellow-500 mb-4">
+          <div class="flex gap-1 text-yellow-400 mb-4">
             <Star fill="currentColor" size={16} /><Star
               fill="currentColor"
               size={16}
@@ -221,11 +238,13 @@ import { path } from "../utils/path";
               size={16}
             /><Star fill="currentColor" size={16} />
           </div>
-          <p class="text-gray-600 italic mb-4">
+          <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
             "Die Nähe zu Kassel ist super, aber man schläft hier so ruhig wie
             mitten in der Wildnis. Preis-Leistung ist top!"
           </p>
-          <p class="font-bold text-primary text-sm">- Julia W.</p>
+          <div class="pt-4 border-t border-gray-50">
+            <p class="font-bold text-gray-900 text-sm">Julia W.</p>
+          </div>
         </div>
       </div>
     </div>
