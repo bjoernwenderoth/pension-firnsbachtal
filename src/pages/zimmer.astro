@@ -12,6 +12,7 @@ import gallery1 from "../assets/haus_garten.jpg";
 import gallery2 from "../assets/haus_garten2.jpg";
 import gallery3 from "../assets/haus_parkplatz.jpg";
 import gallery4 from "../assets/haus_nacht.jpg";
+import { path } from "../utils/path";
 
 const amenities = [
   { icon: ShowerHead, label: "Dusche & WC" },
@@ -24,7 +25,11 @@ const amenities = [
 ];
 ---
 
-<Layout title="Zimmer & Preise">
+<Layout
+  title="Zimmer & Preise | Übernachtung Schauenburg"
+  description=`Gemütliche Einzel- & Doppelzimmer ab ${site.prices.single}€. Inkl. Frühstück, WLAN & Parkplatz. Ideal für Monteure, Wanderer und Kurzurlauber im Habichtswald.`
+  image={path("/zimmer.jpg")}
+>
   <!-- Header Hero -->
   <div
     class="bg-primary pt-32 pb-20 text-center text-white relative overflow-hidden"

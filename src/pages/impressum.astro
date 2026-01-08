@@ -3,7 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
 ---
 
-<Layout title="Impressum">
+<Layout
+  title="Impressum"
+  description="Rechtliche Angaben und Impressum des Haus Firnsbachtal in Schauenburg."
+>
   <div class="max-w-3xl mx-auto px-4 py-20">
     <h1 class="text-4xl font-serif text-primary mb-10">Impressum</h1>
 
@@ -12,7 +15,8 @@ import site from "../data/site.json";
         <h2 class="text-xl font-bold mb-2">Angaben gemäß § 5 TMG</h2>
         <p>
           {site.name}<br />
-          Inhaber:{site.firstname} {site.lastname}<br />
+          Inhaber:{site.firstname}
+          {site.lastname}<br />
           {site.address.street}<br />
           {site.address.zip}
           {site.address.city}

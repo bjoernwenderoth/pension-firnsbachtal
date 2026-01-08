@@ -1,12 +1,30 @@
 ---
 import site from "../data/site.json";
 import { Phone, Mail, MessageCircle, Menu, X } from "lucide-astro";
+import { path } from "../utils/path";
 import "@fontsource/playfair-display";
 import "@fontsource/inter";
 import "../styles/global.css";
-import { path } from "../utils/path";
 
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Urlaub im Haus Firnsbachtal in Schauenburg. Gemütliche Pension & Ferienwohnung direkt am Waldrand. Wandern im Habichtswald, Nähe Kassel & Bergpark Wilhelmshöhe.",
+  image = path("/og-image.jpg"),
+} = Astro.props;
+
+const siteUrl = import.meta.env.SITE ?? "https://bjoernwenderoth.github.io";
+const base = import.meta.env.BASE_URL ?? "/";
+
+const cleanBase = base.endsWith("/") ? base : `${base}/`;
+const cleanImage = image.startsWith("/") ? image.slice(1) : image;
+const imageUrl = `${siteUrl}${cleanBase}${cleanImage}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -14,13 +32,29 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta
-      name="description"
-      content={`Urlaub im ${site.name} in Schauenburg. Wandern im Habichtswald, Ruhe genießen.`}
-    />
+    <link rel="icon" type="image/svg+xml" href={path("favicon.svg")} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary -->
     <title>{title} | {site.name}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={`${title} | ${site.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={`${title} | ${site.name}`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
   </head>
+
   <body class="flex flex-col min-h-screen bg-bg-warm text-gray-800">
     <!-- Top Bar (Desktop only) -->
     <div class="bg-primary text-white text-xs py-2 px-4 hidden md:block">
@@ -64,7 +98,6 @@ const { title } = Astro.props;
         <ul
           class="hidden md:flex gap-8 text-sm font-medium text-gray-600 uppercase tracking-widest"
         >
-          <!-- Nutzung der path() Funktion -->
           <li>
             <a href={path("/")} class="hover:text-primary transition">Home</a>
           </li>
@@ -74,7 +107,7 @@ const { title } = Astro.props;
             >
           </li>
           <li>
-            <a href={path("/lage")} class="hover:text-primary transition"
+            <a href={path("lage")} class="hover:text-primary transition"
               >Lage & Umgebung</a
             >
           </li>
@@ -96,16 +129,11 @@ const { title } = Astro.props;
       </nav>
     </header>
 
-    <!-- 
-            MOBILE MENU OVERLAY 
-            Ausserhalb des Headers platziert, um Stacking-Probleme zu vermeiden.
-            Nutzt h-dvh für korrekte Höhe auf Handys.
-        -->
+    <!-- MOBILE MENU OVERLAY -->
     <div
       id="mobile-menu"
       class="fixed inset-0 z-50 bg-[#F9F7F2] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden h-dvh w-full flex flex-col"
     >
-      <!-- Mobile Menu Header mit Close Button -->
       <div
         class="flex justify-between items-center p-4 border-b border-gray-200"
       >
@@ -120,9 +148,7 @@ const { title } = Astro.props;
           <X size={28} />
         </button>
       </div>
-
-      <!-- Links -->
-      <div class="grow flex flex-col justify-center items-center gap-8">
+      <div class="flex-grow flex flex-col justify-center items-center gap-8">
         <ul
           class="flex flex-col gap-6 text-2xl font-serif text-primary text-center"
         >
@@ -134,28 +160,26 @@ const { title } = Astro.props;
           </li>
           <li>
             <a
-              href={path("/zimmer")}
+              href={path("zimmer")}
               class="mobile-link hover:text-primary-light transition"
               >Zimmer & Preise</a
             >
           </li>
           <li>
             <a
-              href={path("/lage")}
+              href={path("lage")}
               class="mobile-link hover:text-primary-light transition"
               >Lage & Umgebung</a
             >
           </li>
           <li>
             <a
-              href={path("/kontakt")}
+              href={path("kontakt")}
               class="mobile-link hover:text-primary-light transition">Kontakt</a
             >
           </li>
         </ul>
       </div>
-
-      <!-- Mobile Footer Info -->
       <div class="p-8 bg-primary/5 text-center">
         <div class="flex justify-center gap-8 text-primary mb-4">
           <a href={`tel:${site.contact.phone}`}><Phone size={24} /></a>
@@ -197,21 +221,26 @@ const { title } = Astro.props;
           <h3 class="font-serif text-xl mb-4">Links</h3>
           <ul class="space-y-2 text-sm text-white/80">
             <li>
-              <a href={path("/impressum")} class="hover:text-accent"
-                >Impressum</a
+              <a href={path("impressum")} class="hover:text-accent">Impressum</a
               >
             </li>
             <li>
-              <a href={path("/datenschutz")} class="hover:text-accent"
+              <a href={path("datenschutz")} class="hover:text-accent"
                 >Datenschutz</a
               >
             </li>
           </ul>
         </div>
       </div>
+      <div
+        class="text-center text-xs text-white/40 mt-10 border-t border-white/10 pt-4"
+      >
+        &copy; {new Date().getFullYear()}
+        {site.name}. Alle Rechte vorbehalten.
+      </div>
     </footer>
 
-    <!-- Javascript Logic -->
+    <!-- Script Logic -->
     <script>
       const openBtn = document.getElementById("menu-open-btn");
       const closeBtn = document.getElementById("menu-close-btn");
@@ -219,7 +248,6 @@ const { title } = Astro.props;
       const mobileLinks = document.querySelectorAll(".mobile-link");
 
       function openMenu() {
-        // Das '?' bedeutet: Führe das nur aus, wenn mobileMenu NICHT null ist
         mobileMenu?.classList.remove("translate-x-full");
         document.body.style.overflow = "hidden";
       }
@@ -229,21 +257,12 @@ const { title } = Astro.props;
         document.body.style.overflow = "";
       }
 
-      // Event Listener nur hinzufügen, wenn die Buttons auch wirklich gefunden wurden
-      if (openBtn) {
-        openBtn.addEventListener("click", openMenu);
-      }
+      if (openBtn) openBtn.addEventListener("click", openMenu);
+      if (closeBtn) closeBtn.addEventListener("click", closeMenu);
 
-      if (closeBtn) {
-        closeBtn.addEventListener("click", closeMenu);
-      }
-
-      // Links schließen das Menü auch
-      if (mobileLinks) {
-        mobileLinks.forEach((link) => {
-          link.addEventListener("click", closeMenu);
-        });
-      }
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
     </script>
   </body>
 </html>
