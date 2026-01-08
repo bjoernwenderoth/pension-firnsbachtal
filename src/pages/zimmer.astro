@@ -13,6 +13,7 @@ import gallery2 from "../assets/haus_garten2.jpg";
 import gallery3 from "../assets/haus_parkplatz.jpg";
 import gallery4 from "../assets/haus_nacht.jpg";
 import ogZimemer from "../assets/og-zimmer.png";
+import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
 
 const amenities = [
   { icon: ShowerHead, label: "Dusche & WC" },
@@ -251,7 +252,9 @@ const amenities = [
             href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
             class="bg-[#25D366] text-white font-bold py-3 px-8 rounded-full hover:bg-[#20bd5a] transition flex items-center justify-center gap-2"
           >
-            WhatsApp Nachricht
+            <WhatsAppIcon size={18} />
+
+            WhatsApp
           </a>
         </div>
       </div>

@@ -8,6 +8,7 @@ import "../styles/global.css";
 
 import { getImage } from "astro:assets";
 import defaultOgImage from "../assets/og-image.jpg";
+import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
 
 interface Props {
   title: string;
@@ -83,7 +84,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <a
           href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
           class="flex items-center gap-2 hover:text-green-300 transition"
-          ><MessageCircle size={14} /> WhatsApp</a
+        >
+          <WhatsAppIcon size={14} /> WhatsApp</a
         >
       </div>
     </div>
@@ -136,34 +138,76 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#F9F7F2] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden h-dvh w-full flex flex-col">
-            
-      <div class="flex justify-between items-center p-4 border-b border-gray-200">
-          <span class="text-2xl font-serif font-bold text-primary">{site.name}</span>
-          <button id="menu-close-btn" class="text-primary p-2 focus:outline-none" aria-label="Menü schließen">
-              <X size={28} />
-          </button>
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-[#F9F7F2] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden h-dvh w-full flex flex-col"
+    >
+      <div
+        class="flex justify-between items-center p-4 border-b border-gray-200"
+      >
+        <span class="text-2xl font-serif font-bold text-primary"
+          >{site.name}</span
+        >
+        <button
+          id="menu-close-btn"
+          class="text-primary p-2 focus:outline-none"
+          aria-label="Menü schließen"
+        >
+          <X size={28} />
+        </button>
       </div>
 
       <div class="flex-grow flex flex-col justify-center items-center gap-8">
-          <ul class="flex flex-col gap-6 text-2xl font-serif text-primary text-center">
-              <li><a href={path('/')} class="mobile-link hover:text-primary-light transition">Home</a></li>
-              <li><a href={path('zimmer')} class="mobile-link hover:text-primary-light transition">Zimmer & Preise</a></li>
-              <li><a href={path('lage')} class="mobile-link hover:text-primary-light transition">Lage & Umgebung</a></li>
-              <li><a href={path('kontakt')} class="mobile-link hover:text-primary-light transition">Kontakt</a></li>
-          </ul>
+        <ul
+          class="flex flex-col gap-6 text-2xl font-serif text-primary text-center"
+        >
+          <li>
+            <a
+              href={path("/")}
+              class="mobile-link hover:text-primary-light transition">Home</a>
+          </li>
+          <li>
+            <a
+              href={path("zimmer")}
+              class="mobile-link hover:text-primary-light transition"
+              >Zimmer & Preise</a>
+          </li>
+          <li>
+            <a
+              href={path("lage")}
+              class="mobile-link hover:text-primary-light transition"
+              >Lage & Umgebung</a>
+          </li>
+          <li>
+            <a
+              href={path("kontakt")}
+              class="mobile-link hover:text-primary-light transition"
+              >Kontakt</a>
+          </li>
+        </ul>
       </div>
 
       <div class="p-8 bg-primary/5 text-center">
-          <div class="flex justify-center gap-14 text-primary mb-6">
-              <a href={`tel:${site.contact.phone}`} class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"><Phone size={24}/></a>
-              <a href={`mailto:${site.contact.email}`} class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"><Mail size={24}/></a>
-              <a href={`https://wa.me/${site.contact.whatsapp.replace('+', '')}`} class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"><MessageCircle size={24}/></a>
-          </div>
-          <p class="text-xs text-gray-500">Mitten im Habichtswald</p>
+        <div class="flex justify-center gap-14 text-primary mb-6">
+          <a
+            href={`tel:${site.contact.phone}`}
+            class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
+            ><Phone size={24} /></a
+          >
+          <a
+            href={`mailto:${site.contact.email}`}
+            class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
+            ><Mail size={24} /></a
+          >
+          <a
+            href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}
+            class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
+            ><MessageCircle size={24} /></a
+          >
+        </div>
+        <p class="text-xs text-gray-500">Mitten im Habichtswald</p>
       </div>
-      
-  </div>
+    </div>
 
     <main class="flex-grow w-full">
       <slot />
