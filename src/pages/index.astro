@@ -1,15 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
-import {
-  MapPin,
-  ArrowRight,
-  Star,
-  TreePine,
-  Coffee,
-  Footprints,
-} from "lucide-astro";
+import { MapPin, Star, TreePine, Coffee, Footprints } from "lucide-astro";
 import { path } from "../utils/path";
+import { Image } from "astro:assets";
+import forest from "../assets/forest.webp";
+import home from "../assets/home.jpg";
 ---
 
 <Layout
@@ -21,8 +17,8 @@ import { path } from "../utils/path";
     class="relative h-[85vh] flex items-center justify-center overflow-hidden"
   >
     <!-- Platzhalterbild: Ersetze dies durch ein hochwertiges Foto deiner Unterkunft oder des Waldes -->
-    <img
-      src={path("home.jpg")}
+    <Image
+      src={home}
       alt="Waldlandschaft Habichtswald"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -114,8 +110,8 @@ import { path } from "../utils/path";
     <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
       <div class="order-2 md:order-1">
         <!-- Bild Platzhalter: Wald / Bach -->
-        <img
-          src={path("/forest.webp")}
+        <Image
+          src={forest}
           class="rounded-2xl shadow-xl w-full h-auto object-cover"
           alt="Firnsbachtal Natur"
         />
