@@ -4,5 +4,5 @@ export function path(slug: string): string {
   if (cleanSlug === "" && base.endsWith("/")) {
     return base;
   }
-  return `${base}${cleanSlug}`;
+  return `${base}/${cleanSlug}`;
 }
