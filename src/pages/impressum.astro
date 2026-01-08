@@ -15,7 +15,7 @@ import site from "../data/site.json";
         <h2 class="text-xl font-bold mb-2">Angaben gemäß § 5 TMG</h2>
         <p>
           {site.name}<br />
-          Inhaber:{site.firstname}
+          Inhaber: {site.firstname}
           {site.lastname}<br />
           {site.address.street}<br />
           {site.address.zip}
@@ -36,14 +36,15 @@ import site from "../data/site.json";
         <p>
           Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br
           />
-          [DE 123 456 789] (Falls vorhanden, sonst diesen Abschnitt löschen)
+          {site.tax_id}
         </p>
       </section>
 
       <section>
         <h2 class="text-xl font-bold mb-2">Redaktionell verantwortlich</h2>
         <p>
-          [Vorname Nachname]<br />
+          {site.firstname}
+          {site.lastname}<br />
           {site.address.street}<br />
           {site.address.zip}
           {site.address.city}
