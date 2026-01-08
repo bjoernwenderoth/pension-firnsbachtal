@@ -19,7 +19,7 @@ import { path } from "../utils/path";
   >
     <!-- Platzhalterbild: Ersetze dies durch ein hochwertiges Foto deiner Unterkunft oder des Waldes -->
     <img
-      src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?q=80&w=2070&auto=format&fit=crop"
+      src={path("home.jpg")}
       alt="Waldlandschaft Habichtswald"
       class="absolute inset-0 w-full h-full object-cover"
     />
@@ -112,7 +112,7 @@ import { path } from "../utils/path";
       <div class="order-2 md:order-1">
         <!-- Bild Platzhalter: Wald / Bach -->
         <img
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop"
+          src={path("/forest.webp")}
           class="rounded-2xl shadow-xl w-full h-auto object-cover"
           alt="Firnsbachtal Natur"
         />
@@ -229,7 +229,7 @@ import { path } from "../utils/path";
   </section>
 
   <!-- MAP SECTION -->
-  <section class="h-[400px] w-full relative bg-gray-200">
+  <section class="h-100 w-full relative">
     <iframe
       src={site.map_url}
       width="100%"
@@ -238,7 +238,9 @@ import { path } from "../utils/path";
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      class="absolute inset-0 grayscale hover:grayscale-0 transition duration-700"
+      class="absolute"
     ></iframe>
   </section>
+
+
 </Layout>
