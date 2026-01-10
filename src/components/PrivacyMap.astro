@@ -1,7 +1,6 @@
 ---
-import { MapPin } from "lucide-astro";
-import { Image } from "astro:assets";
 import { path } from "../utils/path";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   url: string;
@@ -38,7 +37,7 @@ const {
       <div
         class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-primary"
       >
-        <MapPin size={24} />
+        <Icon name="lucide:map-pin"  size={24} />
       </div>
       <h3 class="text-xl font-serif text-primary mb-2">Karte laden</h3>
       <p class="text-gray-500 text-xs mb-6 leading-relaxed">

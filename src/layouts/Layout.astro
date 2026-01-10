@@ -1,13 +1,13 @@
 ---
 import site from "../data/site.json";
-import { Phone, Mail, MessageCircle, Menu, X } from "lucide-astro";
 import { path } from "../utils/path";
+import { Icon } from "astro-icon/components";
 import "@fontsource/playfair-display";
 import "@fontsource/inter";
 import "../styles/global.css";
 
 import { getImage } from "astro:assets";
-import defaultOgImage from "../assets/og-image.jpg";
+import defaultOgImage from "../assets/og-image.png";
 import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
 
 interface Props {
@@ -75,12 +75,12 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           <a
             href={`tel:${site.contact.phone}`}
             class="flex items-center gap-2 hover:text-accent transition"
-            ><Phone size={14} /> {site.contact.phone_display}</a
+            ><Icon name="lucide:phone" size={14} /> {site.contact.phone_display}</a
           >
           <a
             href={mailtoLink}
             class="flex items-center gap-2 hover:text-accent transition"
-            ><Mail size={14} /> {site.contact.email}</a
+            ><Icon name="lucide:mail" size={14} /> {site.contact.email}</a
           >
         </div>
         <a
@@ -135,7 +135,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           class="md:hidden text-primary p-2 focus:outline-none"
           aria-label="Menü öffnen"
         >
-          <Menu size={28} />
+          <Icon name="lucide:menu" size={28} />
         </button>
       </nav>
     </header>
@@ -156,7 +156,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           class="text-primary p-2 focus:outline-none"
           aria-label="Menü schließen"
         >
-          <X size={28} />
+          <Icon name="lucide:x" size={28} />
         </button>
       </div>
 
@@ -198,12 +198,12 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           <a
             href={`tel:${site.contact.phone}`}
             class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
-            ><Phone size={24} /></a
+            ><Icon name="lucide:phone" size={24} /></a
           >
           <a
             href={mailtoLink}
             class="p-2 bg-white rounded-full shadow-sm hover:scale-110 transition"
-            ><Mail size={24} /></a
+            ><Icon name="lucide:mail" size={24} /></a
           >
           <a
             href={`https://wa.me/${site.contact.whatsapp.replace("+", "")}`}

@@ -3,19 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
 import { Image } from "astro:assets";
 import { path } from "../utils/path";
-import {
-  Mountain,
-  Castle,
-  Droplets,
-  Map,
-  Train,
-  Car,
-  Footprints,
-  Camera,
-  Bike,
-  Club,
-} from "lucide-astro";
-import lage from "../assets/lage.jpg";
+import { Icon } from "astro-icon/components";
+import lage from "../assets/lage.png";
 import PrivacyMap from "../components/PrivacyMap.astro";
 ---
 
@@ -82,7 +71,7 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       <!-- Wandern -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Footprints size={32} />
+          <Icon name="lucide:footprints" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">
@@ -95,7 +84,7 @@ import PrivacyMap from "../components/PrivacyMap.astro";
           </p>
           <ul class="text-sm text-gray-500 space-y-1">
             <li>• Eco Pfad Archäologie</li>
-            <li>• Premiumwanderwege direkt ab Haus</li>
+            <li>• Wanderwege direkt ab Haus</li>
             <li>• Dörnberg mit den Helfensteinen</li>
           </ul>
         </div>
@@ -104,14 +93,14 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       <!-- Kultur -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Castle size={32} />
+          <Icon name="lucide:castle" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">
             UNESCO Welterbe Bergpark
           </h3>
           <p class="text-gray-600 leading-relaxed mb-4">
-            Nur ca. 10 Autominuten oder eine schöne Wanderung entfernt liegt der
+            Nur ca. 15 Autominuten oder eine schöne Wanderung entfernt liegt der
             Bergpark Wilhelmshöhe. Bestaunen Sie den monumentalen <strong
               >Herkules</strong
             >, das Schloss Wilhelmshöhe und die weltberühmten Wasserspiele.
@@ -124,10 +113,10 @@ import PrivacyMap from "../components/PrivacyMap.astro";
         </div>
       </div>
 
-      <!-- NEU: Action & Bike -->
+      <!-- Action & Bike -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Bike size={32} />
+          <Icon name="lucide:bike" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">
@@ -149,7 +138,7 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       <!-- Wellness -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Droplets size={32} />
+          <Icon name="lucide:droplets" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">
@@ -166,7 +155,7 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       <!-- Ausblicke -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Camera size={32} />
+          <Icon name="lucide:camera" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">
@@ -180,10 +169,10 @@ import PrivacyMap from "../components/PrivacyMap.astro";
         </div>
       </div>
 
-      <!-- NEU: Golf -->
+      <!-- Golf -->
       <div class="flex gap-6 items-start">
         <div class="p-4 bg-nature-50 rounded-full text-primary shrink-0">
-          <Club size={32} />
+          <Icon name="lucide:club" size={32} />
         </div>
         <div>
           <h3 class="text-xl font-bold mb-2 text-gray-800">Golf & Freizeit</h3>
@@ -212,24 +201,24 @@ import PrivacyMap from "../components/PrivacyMap.astro";
 
           <div class="space-y-4">
             <div class="flex items-center gap-4 border-b border-white/20 pb-2">
-              <Car class="text-accent" />
+              <Icon name="lucide:car" class="text-accent" />
               <span class="flex-grow">Kassel Innenstadt</span>
-              <span class="font-bold text-accent">ca. 15 Min.</span>
+              <span class="font-bold text-accent">ca. 25 Min.</span>
             </div>
             <div class="flex items-center gap-4 border-b border-white/20 pb-2">
-              <Train class="text-accent" />
+              <Icon name="lucide:train" class="text-accent" />
               <span class="flex-grow">ICE Bahnhof Wilhelmshöhe</span>
               <span class="font-bold text-accent">ca. 20 Min.</span>
             </div>
             <div class="flex items-center gap-4 border-b border-white/20 pb-2">
-              <Mountain class="text-accent" />
+              <Icon name="lucide:mountain" class="text-accent" />
               <span class="flex-grow">Hohes Gras / Kletterwald</span>
-              <span class="font-bold text-accent">ca. 5 Min.</span>
+              <span class="font-bold text-accent">ca. 15 Min.</span>
             </div>
             <div class="flex items-center gap-4 border-b border-white/20 pb-2">
-              <Map class="text-accent" />
+              <Icon name="lucide:map" class="text-accent" />
               <span class="flex-grow">Autobahn A44</span>
-              <span class="font-bold text-accent">ca. 5 Min.</span>
+              <span class="font-bold text-accent">ca. 10 Min.</span>
             </div>
           </div>
         </div>

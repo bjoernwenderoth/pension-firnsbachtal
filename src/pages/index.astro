@@ -1,18 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
-import {
-  MapPin,
-  Star,
-  TreePine,
-  Coffee,
-  Footprints,
-  ArrowRight,
-} from "lucide-astro";
+import { Icon } from "astro-icon/components";
 import { path } from "../utils/path";
 import { Image } from "astro:assets";
-import forest from "../assets/forest.webp";
-import home from "../assets/home.jpg";
+import forest from "../assets/forest.jpg";
+import home from "../assets/home.png";
 import PrivacyMap from "../components/PrivacyMap.astro";
 ---
 
@@ -89,21 +82,21 @@ import PrivacyMap from "../components/PrivacyMap.astro";
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 not-prose">
           <div class="flex flex-col items-center gap-3">
             <div class="p-4 bg-nature-50 rounded-full text-primary">
-              <TreePine size={32} />
+              <Icon name="lucide:tree-pine" size={32} />
             </div>
             <h3 class="font-serif text-lg">Direkte Waldlage</h3>
             <p class="text-sm">Wanderwege starten direkt vor der Haustür.</p>
           </div>
           <div class="flex flex-col items-center gap-3">
             <div class="p-4 bg-nature-50 rounded-full text-primary">
-              <Coffee size={32} />
+              <Icon name="lucide:coffee" size={32} />
             </div>
             <h3 class="font-serif text-lg">Gemütliches Ambiente</h3>
             <p class="text-sm">Fühlen Sie sich wie zu Hause.</p>
           </div>
           <div class="flex flex-col items-center gap-3">
             <div class="p-4 bg-nature-50 rounded-full text-primary">
-              <MapPin size={32} />
+              <Icon name="lucide:map-pin" size={32} />
             </div>
             <h3 class="font-serif text-lg">Zentral & Ruhig</h3>
             <p class="text-sm">20 Min. nach Kassel & zum ICE-Bahnhof.</p>
@@ -145,10 +138,10 @@ import PrivacyMap from "../components/PrivacyMap.astro";
         </p>
         <ul class="space-y-3">
           <li class="flex items-center gap-3 text-gray-700">
-            <Footprints class="text-primary-light" /> Direkter Zugang zu Premium-Wanderwegen
+            <Icon name="lucide:footprints" class="text-primary-light w-6 h-6" /> Direkter Zugang zu Premium-Wanderwegen
           </li>
           <li class="flex items-center gap-3 text-gray-700">
-            <MapPin class="text-primary-light" /> Nur 20 Minuten zur UNESCO Welterbe
+            <Icon name="lucide:map-pin" class="text-primary-light w-6 h-6" /> Nur 20 Minuten zur UNESCO Welterbe
             Bergpark
           </li>
         </ul>
@@ -169,20 +162,20 @@ import PrivacyMap from "../components/PrivacyMap.astro";
         >
           <span class="font-bold text-gray-800">4.9</span>
           <div class="flex gap-1 text-yellow-400">
-            <Star fill="currentColor" size={16} /><Star
+            <Icon name="heroicons:star-solid" fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} /><Star
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} />
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} />
           </div>
           <div
             class="flex items-center gap-1 text-xs text-gray-500 ml-1 border-l pl-3 border-gray-300"
           >
             <a href={site.rating} target="_blank" class="flex gap-1">
               <span>Google Rezensionen</span>
-              <ArrowRight
+              <Icon name="lucide:arrow-right" 
                 size={14}
                 class="text-primary group-hover:translate-x-1 transition-transform"
               />
@@ -198,13 +191,13 @@ import PrivacyMap from "../components/PrivacyMap.astro";
           class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
           <div class="flex gap-1 text-yellow-400 mb-4">
-            <Star fill="currentColor" size={16} /><Star
+            <Icon name="heroicons:star-solid" fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} /><Star
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} />
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} />
           </div>
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
             "Eine schöne, kleine Pension, die sich hervorragend eignet
@@ -224,13 +217,13 @@ import PrivacyMap from "../components/PrivacyMap.astro";
           class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
           <div class="flex gap-1 text-yellow-400 mb-4">
-            <Star fill="currentColor" size={16} /><Star
+            <Icon name="heroicons:star-solid" fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} /><Star
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} />
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} />
           </div>
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">
             "Die Familie ist sehr nett und hilfsbereit, die Zimmer hell und
@@ -247,13 +240,13 @@ import PrivacyMap from "../components/PrivacyMap.astro";
           class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col"
         >
           <div class="flex gap-1 text-yellow-400 mb-4">
-            <Star fill="currentColor" size={16} /><Star
+            <Icon name="heroicons:star-solid" fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} /><Star
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} /><Icon name="heroicons:star-solid" 
               fill="currentColor"
               size={16}
-            /><Star fill="currentColor" size={16} />
+            /><Icon name="heroicons:star-solid"  fill="currentColor" size={16} />
           </div>
 
           <p class="text-gray-600 italic leading-relaxed mb-6 flex-grow">

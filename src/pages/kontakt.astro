@@ -1,16 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  MessageCircle,
-  ArrowRight,
-  Car,
-  Navigation,
-} from "lucide-astro";
+import { Icon } from "astro-icon/components";
 import PrivacyMap from "../components/PrivacyMap.astro";
 import WhatsAppIcon from "../components/icons/WhatsAppIcon.astro";
 
@@ -46,7 +37,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
         <div
           class="w-16 h-16 bg-nature-50 rounded-full flex items-center justify-center text-primary mb-6"
         >
-          <Phone size={32} />
+        <Icon name="lucide:phone" size={32} />
         </div>
         <h3 class="text-xl font-serif font-bold text-gray-800 mb-2">Anrufen</h3>
         <p class="text-gray-500 text-sm mb-6 leading-relaxed">
@@ -87,7 +78,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           class="mt-auto bg-[#25D366] text-white py-3 px-6 rounded-full font-bold hover:bg-[#20bd5a] transition flex items-center gap-2"
         >
           <!-- Auch hier im Button austauschen -->
-          Chat starten <ArrowRight size={16} />
+          Chat starten <Icon name="lucide:arrow-right"size={16} />
         </a>
       </div>
 
@@ -97,7 +88,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
         <div
           class="w-16 h-16 bg-nature-50 rounded-full flex items-center justify-center text-primary mb-6"
         >
-          <Mail size={32} />
+        <Icon name="lucide:mail" size={32} />
         </div>
         <h3 class="text-xl font-serif font-bold text-gray-800 mb-2">E-Mail</h3>
         <p class="text-gray-500 text-sm mb-6 leading-relaxed">
@@ -121,7 +112,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           <div
             class="flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm mb-4"
           >
-            <MapPin size={16} /> Anreise
+          <Icon name="lucide:map-pin" size={16} /> Anreise
           </div>
           <h2 class="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
             So finden Sie zu uns
@@ -142,7 +133,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
                 target="_blank"
                 class="text-primary text-sm font-bold flex items-center gap-1 hover:underline"
               >
-                <Navigation size={14} /> Route planen (Google Maps)
+              <Icon name="lucide:navigation" size={14} /> Route planen (Google Maps)
               </a>
             </div>
           </div>
@@ -151,7 +142,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
             <div
               class="p-3 bg-white rounded-full text-primary shadow-sm shrink-0"
             >
-              <Clock size={24} />
+            <Icon name="lucide:clock" size={24} />
             </div>
             <div>
               <h3 class="font-bold text-gray-800">Check-in & Check-out</h3>
@@ -166,7 +157,7 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
             <div
               class="p-3 bg-white rounded-full text-primary shadow-sm shrink-0"
             >
-              <Car size={24} />
+            <Icon name="lucide:car" size={24} />
             </div>
             <div>
               <h3 class="font-bold text-gray-800">Parken</h3>

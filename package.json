@@ -11,9 +11,11 @@
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/playfair-display": "^5.2.8",
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.83",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.7",
-    "lucide-astro": "^0.556.0",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

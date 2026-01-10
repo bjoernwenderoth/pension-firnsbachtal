@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import icon from "astro-icon";
 
 const isProduction = process.env.NODE_ENV === "production";
 const repoName = "/pension-firnsbachtal";
@@ -13,4 +14,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  integrations: [icon()]
 });
