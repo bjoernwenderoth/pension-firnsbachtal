@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
+import { Image } from "astro:assets";
+import ccLogo from "../assets/cc-logo.png";
 ---
 
 <Layout
@@ -76,25 +78,83 @@ import site from "../data/site.json";
           vor einer Verbraucherschlichtungsstelle teilzunehmen.
         </p>
       </section>
+      <!-- Bildnachweise & Realisierung -->
 
-      <hr class="border-gray-200 my-8" />
-
+      <hr class="border-gray-200 my-12" />
       <section>
-        <h3 class="font-bold mb-2">Haftung für Inhalte</h3>
-        <p class="text-sm">
-          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte
-          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
-          §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
-          verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
-          überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
-          Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
-          Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
-          hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem
-          Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
-          Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
-          Inhalte umgehend entfernen.
-        </p>
+        <h3 class="font-serif text-xl text-primary mb-6">
+          Konzept, Design & Realisierung
+        </h3>
+
+        <div class="flex items-center gap-6">
+          <a
+            href="https://bjoern-wenderoth.de/"
+            target="_blank"
+            rel="noopener"
+            class="block shrink-0 transition-transform hover:scale-105"
+          >
+            <div
+              class="bg-primary p-4 rounded-xl shadow-md w-32 h-24 flex items-center justify-center"
+            >
+              <Image
+                src={ccLogo}
+                alt="Creative & Code Logo"
+                width={120}
+                class="w-full h-auto opacity-90"
+              />
+            </div>
+          </a>
+
+          <div>
+            <strong class="block text-gray-900 text-lg mb-1"
+              >Creative & Code</strong
+            >
+            <span class="block text-gray-600 mb-2">Björn Wenderoth</span>
+
+            <a
+              href="https://bjoern-wenderoth.de/"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center text-primary font-bold hover:underline group"
+            >
+              www.bjoern-wenderoth.de
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="ml-1 transition-transform group-hover:translate-x-1"
+              >
+                <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </section>
     </div>
+
+    <hr class="border-gray-200 my-8" />
+
+    <section>
+      <h3 class="font-bold mb-2">Haftung für Inhalte</h3>
+      <p class="text-sm">
+        Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf
+        diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8
+        bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+        übermittelte oder gespeicherte fremde Informationen zu überwachen oder
+        nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit
+        hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+        Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+        Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+        Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von
+        entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
+        entfernen.
+      </p>
+    </section>
   </div>
 </Layout>

@@ -5,6 +5,8 @@ import { Icon } from "astro-icon/components";
 import "@fontsource/playfair-display";
 import "@fontsource/inter";
 import "../styles/global.css";
+import ccLogo from "../assets/cc-logo.png";
+import { Image } from "astro:assets";
 
 import { getImage } from "astro:assets";
 import defaultOgImage from "../assets/og-image.png";
@@ -75,7 +77,8 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
           <a
             href={`tel:${site.contact.phone}`}
             class="flex items-center gap-2 hover:text-accent transition"
-            ><Icon name="lucide:phone" size={14} /> {site.contact.phone_display}</a
+            ><Icon name="lucide:phone" size={14} />
+            {site.contact.phone_display}</a
           >
           <a
             href={mailtoLink}
@@ -221,42 +224,72 @@ const mailtoLink = `mailto:${site.contact.email}?subject=${encodeURIComponent(si
 
     <!-- Footer -->
     <footer class="bg-primary text-white py-12 mt-auto">
-      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-        <div>
+      <div
+        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12"
+      >
+        <!-- Spalte 1: Info (Nimmt 4 von 12 Teilen) -->
+        <div class="lg:col-span-4">
           <h3 class="font-serif text-xl mb-4">{site.name}</h3>
           <p class="text-white/80 text-sm leading-relaxed">
             {site.tagline}
           </p>
         </div>
-        <div>
+
+        <!-- Spalte 2: Kontakt (Nimmt 3 von 12 Teilen) -->
+        <div class="lg:col-span-3">
           <h3 class="font-serif text-xl mb-4">Kontakt</h3>
           <ul class="space-y-2 text-sm text-white/80">
             <li>{site.address.street}</li>
             <li>{site.address.zip} {site.address.city}</li>
             <li class="pt-2">
               <a href={`tel:${site.contact.phone}`}
-                >{site.contact.phone_display}</a
-              >
+                >Tel.: {site.contact.phone_display}</a>
             </li>
           </ul>
         </div>
-        <div>
+
+        <!-- Spalte 3: Links (Nimmt nur 2 von 12 Teilen -->
+        <div class="lg:col-span-2">
           <h3 class="font-serif text-xl mb-4">Links</h3>
           <ul class="space-y-2 text-sm text-white/80">
             <li>
-              <a href={path("impressum")} class="hover:text-accent">Impressum</a
-              >
+              <a href={path("impressum")} class="hover:text-accent"
+                >Impressum</a>
             </li>
             <li>
               <a href={path("datenschutz")} class="hover:text-accent"
-                >Datenschutz</a
-              >
+                >Datenschutz</a>
             </li>
           </ul>
         </div>
+
+        <!-- Spalte 4: Webdesign (Nimmt 3 von 12 Teilen & Zentriert) -->
+
+        <div class="lg:col-span-3 flex flex-col items-center text-center">
+          <a
+            href="https://bjoern-wenderoth.de/"
+            target="_blank"
+            rel="noopener"
+            class="flex flex-col items-center group"
+          >
+            <!-- Logo Bild -->
+            <Image
+              src={ccLogo}
+              alt="Creative & Code - Björn Wenderoth"
+              width={140}
+              class="mb-3 opacity-70 group-hover:opacity-100 transition duration-300"
+            />
+            <span
+              class="text-[10px] uppercase tracking-wider text-white/50 group-hover:text-white/90 transition"
+            >
+              Made by Björn Wenderoth
+            </span>
+          </a>
+        </div>
       </div>
+
       <div
-        class="text-center text-xs text-white/40 mt-10 border-t border-white/10 pt-4"
+        class="text-center text-xs text-white/40 mt-12 border-t border-white/10 pt-6"
       >
         &copy; {new Date().getFullYear()}
         {site.name}. Alle Rechte vorbehalten.
