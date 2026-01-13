@@ -2,14 +2,16 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
+# Berechtigungen setzen, damit der GITHUB_TOKEN auf Pages zugreifen darf
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Erlaubt nur ein gleichzeitiges Deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: 'npm'
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -35,9 +37,6 @@ jobs:
 
       - name: Build site
         run: npm run build
-
-      - name: Create CNAME file
-        run: echo "pensionshaus-firnsbachtal.de" > ./dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
