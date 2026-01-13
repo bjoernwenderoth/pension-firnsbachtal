@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
 import { Icon } from "astro-icon/components";
-import { path } from "../utils/path";
 import { Image } from "astro:assets";
 import forest from "../assets/forest.jpg";
 import home from "../assets/home.png";
@@ -42,13 +41,13 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       </p>
       <div class="flex flex-col md:flex-row gap-4 justify-center">
         <a
-          href={path("/zimmer")}
+          href="/zimmer"
           class="bg-bg-warm text-primary font-bold py-3 px-8 rounded-full hover:bg-white transition duration-300"
         >
           Zimmer ansehen
         </a>
         <a
-          href={path("/kontakt")}
+          href="/kontakt"
           class="bg-primary/80 backdrop-blur-sm text-white border border-white/30 font-bold py-3 px-8 rounded-full hover:bg-primary transition duration-300"
         >
           Jetzt anfragen

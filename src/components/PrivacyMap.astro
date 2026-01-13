@@ -1,5 +1,4 @@
 ---
-import { path } from "../utils/path";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 const {
   url,
   height = "h-[400px]",
-  previewImage = path("/map-preview.jpg"),
+  previewImage = "/map-preview.jpg",
 } = Astro.props;
 ---
 

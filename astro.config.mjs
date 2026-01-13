@@ -7,7 +7,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 export default defineConfig({
   site: isProduction
-    ? "https://pensionshaus-firnsbachtal.de/"
+    ? "https://pensionshaus-firnsbachtal.de"
     : "http://localhost:4321",
   base: "/",
   vite: {

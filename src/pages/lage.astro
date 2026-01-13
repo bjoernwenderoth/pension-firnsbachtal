@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import site from "../data/site.json";
 import { Image } from "astro:assets";
-import { path } from "../utils/path";
 import { Icon } from "astro-icon/components";
 import lage from "../assets/lage.png";
 import PrivacyMap from "../components/PrivacyMap.astro";
@@ -237,7 +236,7 @@ import PrivacyMap from "../components/PrivacyMap.astro";
       Bereit für Ihre Entdeckungstour?
     </h2>
     <a
-      href={path("zimmer")}
+      href="/zimmer"
       class="inline-block bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition shadow-lg"
     >
       Zimmer auswählen
