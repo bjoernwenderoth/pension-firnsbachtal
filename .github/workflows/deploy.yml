@@ -5,13 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Berechtigungen setzen, damit der GITHUB_TOKEN auf Pages zugreifen darf
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Erlaubt nur ein gleichzeitiges Deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
