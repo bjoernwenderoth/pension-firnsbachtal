@@ -4,13 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 
 const isProduction = process.env.NODE_ENV === "production";
-const repoName = "/pension-firnsbachtal";
 
 export default defineConfig({
   site: isProduction
-    ? "https://bjoernwenderoth.github.io"
+    ? "https://pensionshaus-firnsbachtal.de/"
     : "http://localhost:4321",
-  base: isProduction ? repoName : "/",
+  base: "/",
   vite: {
     plugins: [tailwindcss()],
   },
